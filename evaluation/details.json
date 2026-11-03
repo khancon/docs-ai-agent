@@ -1,0 +1,2596 @@
+[
+  {
+    "case": 1,
+    "strategy": "keyword",
+    "query": "How do I diagnose CrashLoopBackOff in a Pod?",
+    "expected": [
+      "tasks/debug/debug-application/debug-pods",
+      "concepts/workloads/pods/pod-lifecycle"
+    ],
+    "retrieved": [
+      "concepts/workloads/pods/pod-lifecycle",
+      "concepts/workloads/pods/pod-lifecycle",
+      "tasks/debug/debug-application/debug-init-containers",
+      "tasks/debug/debug-application/debug-init-containers",
+      "tasks/debug/debug-application/debug-running-pod"
+    ],
+    "recall_at_5": 0.5,
+    "reciprocal_rank": 1.0,
+    "duration_ms": 2.54904106259346
+  },
+  {
+    "case": 2,
+    "strategy": "keyword",
+    "query": "How can I view logs from a previously terminated container?",
+    "expected": [
+      "tasks/debug/debug-application/debug-running-pod"
+    ],
+    "retrieved": [
+      "tasks/debug/debug-application/debug-running-pod",
+      "concepts/cluster-administration/logging",
+      "tasks/debug/debug-application/debug-init-containers",
+      "tasks/configure-pod-container/assign-memory-resource",
+      "concepts/workloads/controllers/job"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 1.0,
+    "duration_ms": 0.764958094805479
+  },
+  {
+    "case": 3,
+    "strategy": "keyword",
+    "query": "My Service has no endpoints. How do I check selectors and Pod labels?",
+    "expected": [
+      "tasks/debug/debug-application/debug-service"
+    ],
+    "retrieved": [
+      "concepts/services-networking/service",
+      "concepts/services-networking/service",
+      "concepts/services-networking/endpoint-slices",
+      "concepts/services-networking/endpoint-slices",
+      "tasks/debug/debug-application/debug-pods"
+    ],
+    "recall_at_5": 0.0,
+    "reciprocal_rank": 0,
+    "duration_ms": 1.0648330207914114
+  },
+  {
+    "case": 4,
+    "strategy": "keyword",
+    "query": "What is the difference between readiness liveness and startup probes?",
+    "expected": [
+      "tasks/configure-pod-container/configure-liveness-readiness-startup-probes"
+    ],
+    "retrieved": [
+      "tasks/configure-pod-container/configure-liveness-readiness-startup-probes",
+      "tasks/configure-pod-container/configure-liveness-readiness-startup-probes",
+      "concepts/workloads/pods/pod-lifecycle",
+      "concepts/workloads/pods/pod-lifecycle",
+      "concepts/services-networking/ingress"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 1.0,
+    "duration_ms": 0.5804999964311719
+  },
+  {
+    "case": 5,
+    "strategy": "keyword",
+    "query": "How do I configure an HTTP liveness probe?",
+    "expected": [
+      "tasks/configure-pod-container/configure-liveness-readiness-startup-probes"
+    ],
+    "retrieved": [
+      "tasks/configure-pod-container/configure-liveness-readiness-startup-probes",
+      "tasks/configure-pod-container/configure-liveness-readiness-startup-probes",
+      "concepts/workloads/pods/pod-lifecycle",
+      "concepts/workloads/pods/pod-lifecycle",
+      "concepts/workloads/pods/init-containers"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 1.0,
+    "duration_ms": 0.580625026486814
+  },
+  {
+    "case": 6,
+    "strategy": "keyword",
+    "query": "How do startup probes protect slow starting containers?",
+    "expected": [
+      "tasks/configure-pod-container/configure-liveness-readiness-startup-probes"
+    ],
+    "retrieved": [
+      "tasks/configure-pod-container/configure-liveness-readiness-startup-probes",
+      "tasks/configure-pod-container/configure-liveness-readiness-startup-probes",
+      "concepts/workloads/pods/pod-lifecycle",
+      "concepts/workloads/pods/pod-lifecycle",
+      "concepts/workloads/pods/init-containers"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 1.0,
+    "duration_ms": 0.6568329408764839
+  },
+  {
+    "case": 7,
+    "strategy": "keyword",
+    "query": "What happens when a container exceeds its memory limit?",
+    "expected": [
+      "concepts/configuration/manage-resources-containers"
+    ],
+    "retrieved": [
+      "concepts/workloads/pods",
+      "concepts/configuration/manage-resources-containers",
+      "concepts/configuration/manage-resources-containers",
+      "tasks/configure-pod-container/assign-memory-resource",
+      "tasks/configure-pod-container/assign-memory-resource"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 0.5,
+    "duration_ms": 0.943250022828579
+  },
+  {
+    "case": 8,
+    "strategy": "keyword",
+    "query": "How are CPU requests and limits configured for containers?",
+    "expected": [
+      "tasks/configure-pod-container/assign-cpu-resource"
+    ],
+    "retrieved": [
+      "concepts/configuration/manage-resources-containers",
+      "concepts/configuration/manage-resources-containers",
+      "tasks/configure-pod-container/assign-cpu-resource",
+      "tasks/configure-pod-container/assign-cpu-resource",
+      "concepts/workloads/pods"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 0.3333333333333333,
+    "duration_ms": 0.659333891235292
+  },
+  {
+    "case": 9,
+    "strategy": "keyword",
+    "query": "How do I assign memory requests and limits to a container?",
+    "expected": [
+      "tasks/configure-pod-container/assign-memory-resource"
+    ],
+    "retrieved": [
+      "tasks/configure-pod-container/assign-memory-resource",
+      "concepts/configuration/manage-resources-containers",
+      "tasks/configure-pod-container/assign-memory-resource",
+      "tasks/configure-pod-container/assign-cpu-resource",
+      "concepts/configuration/manage-resources-containers"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 1.0,
+    "duration_ms": 0.6292919861152768
+  },
+  {
+    "case": 10,
+    "strategy": "keyword",
+    "query": "What is a Kubernetes Pod?",
+    "expected": [
+      "concepts/workloads/pods"
+    ],
+    "retrieved": [
+      "concepts/workloads/pods/pod-lifecycle",
+      "concepts/security/service-accounts",
+      "concepts/containers/images",
+      "concepts/workloads/pods/pod-qos",
+      "tasks/configure-pod-container/configure-liveness-readiness-startup-probes"
+    ],
+    "recall_at_5": 0.0,
+    "reciprocal_rank": 0,
+    "duration_ms": 0.7307500345632434
+  },
+  {
+    "case": 11,
+    "strategy": "keyword",
+    "query": "What phases can a Pod be in during its lifecycle?",
+    "expected": [
+      "concepts/workloads/pods/pod-lifecycle"
+    ],
+    "retrieved": [
+      "concepts/workloads/pods/pod-lifecycle",
+      "concepts/workloads/pods/pod-lifecycle",
+      "concepts/workloads/controllers/deployment",
+      "concepts/storage/persistent-volumes",
+      "concepts/workloads/pods/disruptions"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 1.0,
+    "duration_ms": 0.823125010356307
+  },
+  {
+    "case": 12,
+    "strategy": "keyword",
+    "query": "What does ImagePullBackOff mean?",
+    "expected": [
+      "concepts/containers/images"
+    ],
+    "retrieved": [
+      "concepts/containers/images",
+      "tasks/debug/debug-application/determine-reason-pod-failure",
+      "concepts/workloads/controllers/deployment",
+      "concepts/containers/images",
+      "tasks/configure-pod-container/assign-cpu-resource"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 1.0,
+    "duration_ms": 0.41562493424862623
+  },
+  {
+    "case": 13,
+    "strategy": "keyword",
+    "query": "How do imagePullPolicy and image tags interact?",
+    "expected": [
+      "concepts/containers/images"
+    ],
+    "retrieved": [
+      "concepts/containers/images",
+      "concepts/containers/images",
+      "concepts/scheduling-eviction/pod-priority-preemption",
+      "concepts/storage/storage-classes",
+      "concepts/workloads/pods/sidecar-containers"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 1.0,
+    "duration_ms": 0.5191250238567591
+  },
+  {
+    "case": 14,
+    "strategy": "keyword",
+    "query": "How do init containers run before application containers?",
+    "expected": [
+      "concepts/workloads/pods/init-containers"
+    ],
+    "retrieved": [
+      "concepts/workloads/pods/init-containers",
+      "concepts/workloads/pods/init-containers",
+      "concepts/workloads/pods/sidecar-containers",
+      "concepts/workloads/pods/sidecar-containers",
+      "concepts/workloads/pods"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 1.0,
+    "duration_ms": 0.8290830301120877
+  },
+  {
+    "case": 15,
+    "strategy": "keyword",
+    "query": "How do sidecar containers differ from init containers?",
+    "expected": [
+      "concepts/workloads/pods/sidecar-containers"
+    ],
+    "retrieved": [
+      "concepts/workloads/pods/init-containers",
+      "concepts/workloads/pods/init-containers",
+      "concepts/workloads/pods/sidecar-containers",
+      "concepts/workloads/pods/sidecar-containers",
+      "concepts/workloads/pods/pod-lifecycle"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 0.3333333333333333,
+    "duration_ms": 0.5895419744774699
+  },
+  {
+    "case": 16,
+    "strategy": "keyword",
+    "query": "How can I debug an init container that fails?",
+    "expected": [
+      "tasks/debug/debug-application/debug-init-containers"
+    ],
+    "retrieved": [
+      "concepts/workloads/pods/init-containers",
+      "concepts/workloads/pods/init-containers",
+      "tasks/debug/debug-application/debug-init-containers",
+      "tasks/debug/debug-application/debug-init-containers",
+      "concepts/workloads/pods/pod-lifecycle"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 0.3333333333333333,
+    "duration_ms": 0.5662500625476241
+  },
+  {
+    "case": 17,
+    "strategy": "keyword",
+    "query": "What are Guaranteed Burstable and BestEffort QoS classes?",
+    "expected": [
+      "concepts/workloads/pods/pod-qos"
+    ],
+    "retrieved": [
+      "concepts/workloads/pods/pod-qos",
+      "concepts/workloads/pods/pod-qos",
+      "concepts/scheduling-eviction/node-pressure-eviction",
+      "concepts/scheduling-eviction/node-pressure-eviction",
+      "concepts/scheduling-eviction/taint-and-toleration"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 1.0,
+    "duration_ms": 0.5020840326324105
+  },
+  {
+    "case": 18,
+    "strategy": "keyword",
+    "query": "How does a Deployment rolling update work?",
+    "expected": [
+      "concepts/workloads/controllers/deployment"
+    ],
+    "retrieved": [
+      "concepts/workloads/controllers/deployment",
+      "concepts/workloads/controllers/replicaset",
+      "concepts/workloads/controllers/deployment",
+      "concepts/workloads/controllers/replicaset",
+      "concepts/workloads/controllers/daemonset"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 1.0,
+    "duration_ms": 0.541832996532321
+  },
+  {
+    "case": 19,
+    "strategy": "keyword",
+    "query": "How can I roll back a Deployment revision?",
+    "expected": [
+      "concepts/workloads/controllers/deployment"
+    ],
+    "retrieved": [
+      "concepts/workloads/controllers/deployment",
+      "concepts/workloads/controllers/deployment",
+      "concepts/workloads/controllers/statefulset",
+      "concepts/scheduling-eviction/assign-pod-node",
+      "concepts/workloads/controllers/statefulset"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 1.0,
+    "duration_ms": 0.5437079817056656
+  },
+  {
+    "case": 20,
+    "strategy": "keyword",
+    "query": "What is the purpose of a ReplicaSet?",
+    "expected": [
+      "concepts/workloads/controllers/replicaset"
+    ],
+    "retrieved": [
+      "concepts/workloads/controllers/replicaset",
+      "concepts/workloads/controllers/replicaset",
+      "concepts/workloads/controllers/deployment",
+      "concepts/services-networking/service",
+      "concepts/workloads/controllers/deployment"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 1.0,
+    "duration_ms": 0.4654999356716871
+  },
+  {
+    "case": 21,
+    "strategy": "keyword",
+    "query": "When should I use a StatefulSet for stable network identities?",
+    "expected": [
+      "concepts/workloads/controllers/statefulset"
+    ],
+    "retrieved": [
+      "concepts/workloads/controllers/statefulset",
+      "concepts/workloads/controllers/statefulset",
+      "concepts/services-networking/network-policies",
+      "concepts/workloads/controllers/deployment",
+      "tasks/access-application-cluster/port-forward-access-application-cluster"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 1.0,
+    "duration_ms": 1.1435840278863907
+  },
+  {
+    "case": 22,
+    "strategy": "keyword",
+    "query": "How does a DaemonSet schedule a Pod on each node?",
+    "expected": [
+      "concepts/workloads/controllers/daemonset"
+    ],
+    "retrieved": [
+      "concepts/workloads/controllers/daemonset",
+      "concepts/workloads/controllers/daemonset",
+      "concepts/scheduling-eviction/node-pressure-eviction",
+      "tasks/debug/debug-application/debug-running-pod",
+      "concepts/scheduling-eviction/assign-pod-node"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 1.0,
+    "duration_ms": 0.9906659834086895
+  },
+  {
+    "case": 23,
+    "strategy": "keyword",
+    "query": "How does a Job track Pods until completion?",
+    "expected": [
+      "concepts/workloads/controllers/job"
+    ],
+    "retrieved": [
+      "concepts/workloads/controllers/job",
+      "concepts/workloads/controllers/job",
+      "concepts/workloads/controllers/cron-jobs",
+      "concepts/workloads/controllers/cron-jobs",
+      "concepts/workloads/pods/init-containers"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 1.0,
+    "duration_ms": 0.8498328970745206
+  },
+  {
+    "case": 24,
+    "strategy": "keyword",
+    "query": "How can I schedule Jobs using CronJob?",
+    "expected": [
+      "concepts/workloads/controllers/cron-jobs"
+    ],
+    "retrieved": [
+      "concepts/workloads/controllers/cron-jobs",
+      "concepts/workloads/controllers/cron-jobs",
+      "concepts/workloads/controllers/job",
+      "concepts/workloads/controllers/job",
+      "concepts/workloads/pods/disruptions"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 1.0,
+    "duration_ms": 0.6064580520614982
+  },
+  {
+    "case": 25,
+    "strategy": "keyword",
+    "query": "How does a ClusterIP Service expose Pods?",
+    "expected": [
+      "concepts/services-networking/service"
+    ],
+    "retrieved": [
+      "concepts/services-networking/cluster-ip-allocation",
+      "tasks/debug/debug-application/debug-service",
+      "concepts/services-networking/service",
+      "concepts/services-networking/service",
+      "concepts/services-networking/cluster-ip-allocation"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 0.3333333333333333,
+    "duration_ms": 0.7580419769510627
+  },
+  {
+    "case": 26,
+    "strategy": "keyword",
+    "query": "What is the difference between NodePort and LoadBalancer Services?",
+    "expected": [
+      "concepts/services-networking/service"
+    ],
+    "retrieved": [
+      "concepts/services-networking/ingress",
+      "concepts/services-networking/ingress",
+      "concepts/services-networking/service",
+      "concepts/services-networking/service",
+      "concepts/workloads/controllers/deployment"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 0.3333333333333333,
+    "duration_ms": 0.6131250411272049
+  },
+  {
+    "case": 27,
+    "strategy": "keyword",
+    "query": "How does an Ingress route HTTP traffic?",
+    "expected": [
+      "concepts/services-networking/ingress"
+    ],
+    "retrieved": [
+      "concepts/services-networking/ingress",
+      "concepts/services-networking/ingress",
+      "concepts/services-networking/network-policies",
+      "concepts/services-networking/network-policies",
+      "concepts/services-networking/service"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 1.0,
+    "duration_ms": 0.5499169928953052
+  },
+  {
+    "case": 28,
+    "strategy": "keyword",
+    "query": "How do NetworkPolicies control ingress and egress traffic?",
+    "expected": [
+      "concepts/services-networking/network-policies"
+    ],
+    "retrieved": [
+      "concepts/services-networking/network-policies",
+      "concepts/services-networking/network-policies",
+      "concepts/services-networking/ingress",
+      "concepts/services-networking/ingress",
+      "concepts/services-networking/service"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 1.0,
+    "duration_ms": 0.5985830212011933
+  },
+  {
+    "case": 29,
+    "strategy": "keyword",
+    "query": "How are Service DNS names constructed?",
+    "expected": [
+      "concepts/services-networking/dns-pod-service"
+    ],
+    "retrieved": [
+      "concepts/workloads/controllers/statefulset",
+      "concepts/overview/working-with-objects/namespaces",
+      "concepts/services-networking/dns-pod-service",
+      "concepts/services-networking/service",
+      "concepts/services-networking/service"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 0.3333333333333333,
+    "duration_ms": 0.6151669658720493
+  },
+  {
+    "case": 30,
+    "strategy": "keyword",
+    "query": "What does an EndpointSlice contain?",
+    "expected": [
+      "concepts/services-networking/endpoint-slices"
+    ],
+    "retrieved": [
+      "concepts/services-networking/service",
+      "concepts/services-networking/service",
+      "concepts/services-networking/endpoint-slices",
+      "concepts/services-networking/endpoint-slices",
+      "concepts/configuration/configmap"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 0.3333333333333333,
+    "duration_ms": 0.43779099360108376
+  },
+  {
+    "case": 31,
+    "strategy": "keyword",
+    "query": "How do ConfigMaps provide configuration to Pods?",
+    "expected": [
+      "concepts/configuration/configmap"
+    ],
+    "retrieved": [
+      "tasks/configure-pod-container/configure-pod-configmap",
+      "tasks/configure-pod-container/configure-pod-configmap",
+      "concepts/configuration/configmap",
+      "concepts/configuration/configmap",
+      "concepts/storage/persistent-volumes"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 0.3333333333333333,
+    "duration_ms": 0.8526250021532178
+  },
+  {
+    "case": 32,
+    "strategy": "keyword",
+    "query": "How should I use a Kubernetes Secret?",
+    "expected": [
+      "concepts/configuration/secret"
+    ],
+    "retrieved": [
+      "concepts/storage/volumes",
+      "concepts/storage/storage-classes",
+      "concepts/configuration/secret",
+      "concepts/configuration/secret",
+      "concepts/containers/images"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 0.3333333333333333,
+    "duration_ms": 0.9714160114526749
+  },
+  {
+    "case": 33,
+    "strategy": "keyword",
+    "query": "How can I mount a ConfigMap as a volume?",
+    "expected": [
+      "tasks/configure-pod-container/configure-pod-configmap"
+    ],
+    "retrieved": [
+      "concepts/storage/volumes",
+      "tasks/configure-pod-container/configure-pod-configmap",
+      "tasks/configure-pod-container/configure-pod-configmap",
+      "concepts/configuration/configmap",
+      "concepts/storage/persistent-volumes"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 0.5,
+    "duration_ms": 0.5089170299470425
+  },
+  {
+    "case": 34,
+    "strategy": "keyword",
+    "query": "What is the lifecycle of an emptyDir volume?",
+    "expected": [
+      "concepts/storage/volumes"
+    ],
+    "retrieved": [
+      "concepts/storage/volumes",
+      "concepts/configuration/manage-resources-containers",
+      "concepts/storage/volumes",
+      "concepts/configuration/manage-resources-containers",
+      "concepts/workloads/pods/sidecar-containers"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 1.0,
+    "duration_ms": 0.494333915412426
+  },
+  {
+    "case": 35,
+    "strategy": "keyword",
+    "query": "How do PersistentVolumeClaims bind to PersistentVolumes?",
+    "expected": [
+      "concepts/storage/persistent-volumes"
+    ],
+    "retrieved": [
+      "concepts/storage/persistent-volumes",
+      "concepts/storage/persistent-volumes",
+      "concepts/security/rbac-good-practices",
+      "concepts/storage/volumes",
+      "concepts/storage/volumes"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 1.0,
+    "duration_ms": 0.46562496572732925
+  },
+  {
+    "case": 36,
+    "strategy": "keyword",
+    "query": "How does a StorageClass enable dynamic provisioning?",
+    "expected": [
+      "concepts/storage/storage-classes"
+    ],
+    "retrieved": [
+      "concepts/storage/persistent-volumes",
+      "concepts/workloads/controllers/statefulset",
+      "concepts/storage/storage-classes",
+      "concepts/storage/storage-classes",
+      "concepts/storage/volumes"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 0.3333333333333333,
+    "duration_ms": 0.5104169249534607
+  },
+  {
+    "case": 37,
+    "strategy": "keyword",
+    "query": "How do labels and selectors identify Kubernetes objects?",
+    "expected": [
+      "concepts/overview/working-with-objects/labels"
+    ],
+    "retrieved": [
+      "concepts/overview/working-with-objects/labels",
+      "concepts/overview/working-with-objects/labels",
+      "concepts/overview/working-with-objects/annotations",
+      "concepts/workloads/controllers/replicaset",
+      "concepts/workloads/controllers/replicaset"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 1.0,
+    "duration_ms": 6.837667082436383
+  },
+  {
+    "case": 38,
+    "strategy": "keyword",
+    "query": "How do namespaces divide cluster resources?",
+    "expected": [
+      "concepts/overview/working-with-objects/namespaces"
+    ],
+    "retrieved": [
+      "concepts/overview/working-with-objects/namespaces",
+      "concepts/overview/working-with-objects/namespaces",
+      "concepts/configuration/manage-resources-containers",
+      "concepts/scheduling-eviction/assign-pod-node",
+      "concepts/security/pod-security-standards"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 1.0,
+    "duration_ms": 0.7790829986333847
+  },
+  {
+    "case": 39,
+    "strategy": "keyword",
+    "query": "How do annotations differ from labels?",
+    "expected": [
+      "concepts/overview/working-with-objects/annotations"
+    ],
+    "retrieved": [
+      "concepts/overview/working-with-objects/annotations",
+      "concepts/overview/working-with-objects/labels",
+      "concepts/workloads/controllers/daemonset",
+      "concepts/overview/working-with-objects/annotations",
+      "concepts/overview/working-with-objects/labels"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 1.0,
+    "duration_ms": 0.46966609079390764
+  },
+  {
+    "case": 40,
+    "strategy": "keyword",
+    "query": "How can nodeSelector or node affinity constrain Pod placement?",
+    "expected": [
+      "concepts/scheduling-eviction/assign-pod-node"
+    ],
+    "retrieved": [
+      "concepts/scheduling-eviction/assign-pod-node",
+      "concepts/scheduling-eviction/assign-pod-node",
+      "concepts/workloads/controllers/daemonset",
+      "concepts/storage/storage-classes",
+      "concepts/workloads/controllers/job"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 1.0,
+    "duration_ms": 0.913208001293242
+  },
+  {
+    "case": 41,
+    "strategy": "keyword",
+    "query": "How do taints and tolerations affect scheduling?",
+    "expected": [
+      "concepts/scheduling-eviction/taint-and-toleration"
+    ],
+    "retrieved": [
+      "concepts/scheduling-eviction/taint-and-toleration",
+      "concepts/scheduling-eviction/taint-and-toleration",
+      "concepts/scheduling-eviction/assign-pod-node",
+      "concepts/containers/runtime-class",
+      "concepts/workloads/controllers/daemonset"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 1.0,
+    "duration_ms": 0.49420795403420925
+  },
+  {
+    "case": 42,
+    "strategy": "keyword",
+    "query": "When does node pressure cause Pod eviction?",
+    "expected": [
+      "concepts/scheduling-eviction/node-pressure-eviction"
+    ],
+    "retrieved": [
+      "concepts/scheduling-eviction/node-pressure-eviction",
+      "concepts/scheduling-eviction/node-pressure-eviction",
+      "concepts/scheduling-eviction/pod-priority-preemption",
+      "concepts/workloads/pods/pod-qos",
+      "concepts/scheduling-eviction/taint-and-toleration"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 1.0,
+    "duration_ms": 1.410790951922536
+  },
+  {
+    "case": 43,
+    "strategy": "keyword",
+    "query": "How does Pod priority and preemption work?",
+    "expected": [
+      "concepts/scheduling-eviction/pod-priority-preemption"
+    ],
+    "retrieved": [
+      "concepts/scheduling-eviction/pod-priority-preemption",
+      "concepts/scheduling-eviction/pod-priority-preemption",
+      "concepts/scheduling-eviction/node-pressure-eviction",
+      "concepts/scheduling-eviction/taint-and-toleration",
+      "concepts/scheduling-eviction/taint-and-toleration"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 1.0,
+    "duration_ms": 0.9332080371677876
+  },
+  {
+    "case": 44,
+    "strategy": "keyword",
+    "query": "How can I configure runAsNonRoot in a security context?",
+    "expected": [
+      "tasks/configure-pod-container/security-context"
+    ],
+    "retrieved": [
+      "tasks/configure-pod-container/security-context",
+      "concepts/security/pod-security-standards",
+      "concepts/storage/volumes",
+      "concepts/workloads/pods",
+      "tasks/configure-pod-container/security-context"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 1.0,
+    "duration_ms": 0.738707953132689
+  },
+  {
+    "case": 45,
+    "strategy": "keyword",
+    "query": "How do service accounts identify workloads?",
+    "expected": [
+      "concepts/security/service-accounts"
+    ],
+    "retrieved": [
+      "concepts/security/service-accounts",
+      "concepts/security/service-accounts",
+      "concepts/security/rbac-good-practices",
+      "concepts/security/rbac-good-practices",
+      "concepts/workloads/pods/pod-lifecycle"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 1.0,
+    "duration_ms": 0.7262920262292027
+  },
+  {
+    "case": 46,
+    "strategy": "keyword",
+    "query": "How do I apply least privilege with Kubernetes RBAC?",
+    "expected": [
+      "concepts/security/rbac-good-practices"
+    ],
+    "retrieved": [
+      "concepts/security/service-accounts",
+      "concepts/security/rbac-good-practices",
+      "concepts/security/rbac-good-practices",
+      "concepts/configuration/secret",
+      "concepts/configuration/secret"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 0.5,
+    "duration_ms": 0.9172080317512155
+  },
+  {
+    "case": 47,
+    "strategy": "keyword",
+    "query": "How do I determine why a Pod failed from its termination message?",
+    "expected": [
+      "tasks/debug/debug-application/determine-reason-pod-failure"
+    ],
+    "retrieved": [
+      "concepts/workloads/controllers/job",
+      "tasks/debug/debug-application/determine-reason-pod-failure",
+      "concepts/cluster-administration/logging",
+      "tasks/debug/debug-application/determine-reason-pod-failure",
+      "concepts/workloads/pods/pod-lifecycle"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 0.5,
+    "duration_ms": 1.0491249850019813
+  },
+  {
+    "case": 48,
+    "strategy": "keyword",
+    "query": "How do I use kubectl port-forward to access an application?",
+    "expected": [
+      "tasks/access-application-cluster/port-forward-access-application-cluster"
+    ],
+    "retrieved": [
+      "tasks/access-application-cluster/port-forward-access-application-cluster",
+      "tasks/access-application-cluster/port-forward-access-application-cluster",
+      "concepts/services-networking/service",
+      "tasks/debug/debug-application/debug-service",
+      "concepts/services-networking/service"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 1.0,
+    "duration_ms": 1.1129999766126275
+  },
+  {
+    "case": 1,
+    "strategy": "vector",
+    "query": "How do I diagnose CrashLoopBackOff in a Pod?",
+    "expected": [
+      "tasks/debug/debug-application/debug-pods",
+      "concepts/workloads/pods/pod-lifecycle"
+    ],
+    "retrieved": [
+      "concepts/workloads/pods/pod-lifecycle",
+      "concepts/workloads/pods/pod-lifecycle",
+      "concepts/workloads/controllers/job",
+      "tasks/debug/debug-application/determine-reason-pod-failure",
+      "concepts/workloads/controllers/job"
+    ],
+    "recall_at_5": 0.5,
+    "reciprocal_rank": 1.0,
+    "duration_ms": 0.7355409907177091
+  },
+  {
+    "case": 2,
+    "strategy": "vector",
+    "query": "How can I view logs from a previously terminated container?",
+    "expected": [
+      "tasks/debug/debug-application/debug-running-pod"
+    ],
+    "retrieved": [
+      "tasks/debug/debug-application/debug-running-pod",
+      "tasks/debug/debug-application/determine-reason-pod-failure",
+      "concepts/cluster-administration/logging",
+      "concepts/cluster-administration/logging",
+      "tasks/debug/debug-application/determine-reason-pod-failure"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 1.0,
+    "duration_ms": 0.6726669380441308
+  },
+  {
+    "case": 3,
+    "strategy": "vector",
+    "query": "My Service has no endpoints. How do I check selectors and Pod labels?",
+    "expected": [
+      "tasks/debug/debug-application/debug-service"
+    ],
+    "retrieved": [
+      "tasks/debug/debug-application/debug-pods",
+      "concepts/services-networking/service",
+      "concepts/services-networking/service",
+      "tasks/debug/debug-application/debug-service",
+      "tasks/debug/debug-application/debug-pods"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 0.25,
+    "duration_ms": 0.9925839258357882
+  },
+  {
+    "case": 4,
+    "strategy": "vector",
+    "query": "What is the difference between readiness liveness and startup probes?",
+    "expected": [
+      "tasks/configure-pod-container/configure-liveness-readiness-startup-probes"
+    ],
+    "retrieved": [
+      "tasks/configure-pod-container/configure-liveness-readiness-startup-probes",
+      "concepts/workloads/pods/pod-lifecycle",
+      "tasks/configure-pod-container/configure-liveness-readiness-startup-probes",
+      "concepts/workloads/pods/pod-lifecycle",
+      "concepts/workloads/pods/sidecar-containers"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 1.0,
+    "duration_ms": 0.5892920307815075
+  },
+  {
+    "case": 5,
+    "strategy": "vector",
+    "query": "How do I configure an HTTP liveness probe?",
+    "expected": [
+      "tasks/configure-pod-container/configure-liveness-readiness-startup-probes"
+    ],
+    "retrieved": [
+      "tasks/configure-pod-container/configure-liveness-readiness-startup-probes",
+      "tasks/configure-pod-container/configure-liveness-readiness-startup-probes",
+      "concepts/workloads/pods/pod-lifecycle",
+      "concepts/workloads/pods/pod-lifecycle",
+      "concepts/storage/persistent-volumes"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 1.0,
+    "duration_ms": 0.5533749936148524
+  },
+  {
+    "case": 6,
+    "strategy": "vector",
+    "query": "How do startup probes protect slow starting containers?",
+    "expected": [
+      "tasks/configure-pod-container/configure-liveness-readiness-startup-probes"
+    ],
+    "retrieved": [
+      "tasks/configure-pod-container/configure-liveness-readiness-startup-probes",
+      "concepts/workloads/pods/pod-lifecycle",
+      "tasks/configure-pod-container/configure-liveness-readiness-startup-probes",
+      "concepts/workloads/pods/pod-lifecycle",
+      "concepts/workloads/pods/init-containers"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 1.0,
+    "duration_ms": 0.6979999598115683
+  },
+  {
+    "case": 7,
+    "strategy": "vector",
+    "query": "What happens when a container exceeds its memory limit?",
+    "expected": [
+      "concepts/configuration/manage-resources-containers"
+    ],
+    "retrieved": [
+      "tasks/configure-pod-container/assign-memory-resource",
+      "tasks/configure-pod-container/assign-memory-resource",
+      "concepts/configuration/manage-resources-containers",
+      "concepts/configuration/manage-resources-containers",
+      "concepts/workloads/pods/pod-qos"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 0.3333333333333333,
+    "duration_ms": 1.085542025975883
+  },
+  {
+    "case": 8,
+    "strategy": "vector",
+    "query": "How are CPU requests and limits configured for containers?",
+    "expected": [
+      "tasks/configure-pod-container/assign-cpu-resource"
+    ],
+    "retrieved": [
+      "tasks/configure-pod-container/assign-cpu-resource",
+      "tasks/configure-pod-container/assign-cpu-resource",
+      "concepts/configuration/manage-resources-containers",
+      "concepts/workloads/pods",
+      "concepts/configuration/manage-resources-containers"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 1.0,
+    "duration_ms": 0.8178330026566982
+  },
+  {
+    "case": 9,
+    "strategy": "vector",
+    "query": "How do I assign memory requests and limits to a container?",
+    "expected": [
+      "tasks/configure-pod-container/assign-memory-resource"
+    ],
+    "retrieved": [
+      "tasks/configure-pod-container/assign-memory-resource",
+      "tasks/configure-pod-container/assign-memory-resource",
+      "concepts/configuration/manage-resources-containers",
+      "tasks/configure-pod-container/assign-cpu-resource",
+      "concepts/configuration/manage-resources-containers"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 1.0,
+    "duration_ms": 0.7373749976977706
+  },
+  {
+    "case": 10,
+    "strategy": "vector",
+    "query": "What is a Kubernetes Pod?",
+    "expected": [
+      "concepts/workloads/pods"
+    ],
+    "retrieved": [
+      "concepts/workloads/pods",
+      "concepts/services-networking/service",
+      "concepts/workloads/pods",
+      "concepts/services-networking/cluster-ip-allocation",
+      "concepts/configuration/manage-resources-containers"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 1.0,
+    "duration_ms": 0.9545829379931092
+  },
+  {
+    "case": 11,
+    "strategy": "vector",
+    "query": "What phases can a Pod be in during its lifecycle?",
+    "expected": [
+      "concepts/workloads/pods/pod-lifecycle"
+    ],
+    "retrieved": [
+      "concepts/workloads/pods/pod-lifecycle",
+      "concepts/workloads/pods/pod-lifecycle",
+      "concepts/workloads/pods/sidecar-containers",
+      "concepts/services-networking/network-policies",
+      "concepts/workloads/pods"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 1.0,
+    "duration_ms": 1.0079169878736138
+  },
+  {
+    "case": 12,
+    "strategy": "vector",
+    "query": "What does ImagePullBackOff mean?",
+    "expected": [
+      "concepts/containers/images"
+    ],
+    "retrieved": [
+      "concepts/containers/images",
+      "concepts/containers/images",
+      "concepts/configuration/secret",
+      "tasks/debug/debug-application/determine-reason-pod-failure",
+      "concepts/storage/volumes"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 1.0,
+    "duration_ms": 0.40241703391075134
+  },
+  {
+    "case": 13,
+    "strategy": "vector",
+    "query": "How do imagePullPolicy and image tags interact?",
+    "expected": [
+      "concepts/containers/images"
+    ],
+    "retrieved": [
+      "concepts/containers/images",
+      "concepts/containers/images",
+      "concepts/configuration/secret",
+      "concepts/configuration/secret",
+      "concepts/storage/volumes"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 1.0,
+    "duration_ms": 0.5680839531123638
+  },
+  {
+    "case": 14,
+    "strategy": "vector",
+    "query": "How do init containers run before application containers?",
+    "expected": [
+      "concepts/workloads/pods/init-containers"
+    ],
+    "retrieved": [
+      "concepts/workloads/pods/init-containers",
+      "concepts/workloads/pods/init-containers",
+      "concepts/workloads/pods/sidecar-containers",
+      "tasks/debug/debug-application/debug-init-containers",
+      "tasks/debug/debug-application/debug-init-containers"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 1.0,
+    "duration_ms": 0.8832910098135471
+  },
+  {
+    "case": 15,
+    "strategy": "vector",
+    "query": "How do sidecar containers differ from init containers?",
+    "expected": [
+      "concepts/workloads/pods/sidecar-containers"
+    ],
+    "retrieved": [
+      "concepts/workloads/pods/init-containers",
+      "concepts/workloads/pods/sidecar-containers",
+      "concepts/workloads/pods/init-containers",
+      "concepts/workloads/pods/sidecar-containers",
+      "concepts/workloads/pods"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 0.5,
+    "duration_ms": 0.6142080528661609
+  },
+  {
+    "case": 16,
+    "strategy": "vector",
+    "query": "How can I debug an init container that fails?",
+    "expected": [
+      "tasks/debug/debug-application/debug-init-containers"
+    ],
+    "retrieved": [
+      "tasks/debug/debug-application/debug-init-containers",
+      "tasks/debug/debug-application/debug-init-containers",
+      "concepts/workloads/pods/init-containers",
+      "concepts/workloads/pods/init-containers",
+      "tasks/debug/debug-application/debug-running-pod"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 1.0,
+    "duration_ms": 0.5916251102462411
+  },
+  {
+    "case": 17,
+    "strategy": "vector",
+    "query": "What are Guaranteed Burstable and BestEffort QoS classes?",
+    "expected": [
+      "concepts/workloads/pods/pod-qos"
+    ],
+    "retrieved": [
+      "concepts/workloads/pods/pod-qos",
+      "concepts/workloads/pods/pod-qos",
+      "concepts/workloads/pods/init-containers",
+      "concepts/scheduling-eviction/node-pressure-eviction",
+      "concepts/storage/storage-classes"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 1.0,
+    "duration_ms": 0.5527910543605685
+  },
+  {
+    "case": 18,
+    "strategy": "vector",
+    "query": "How does a Deployment rolling update work?",
+    "expected": [
+      "concepts/workloads/controllers/deployment"
+    ],
+    "retrieved": [
+      "concepts/workloads/controllers/deployment",
+      "concepts/workloads/controllers/deployment",
+      "concepts/workloads/controllers/statefulset",
+      "concepts/workloads/controllers/replicaset"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 1.0,
+    "duration_ms": 0.5995839601382613
+  },
+  {
+    "case": 19,
+    "strategy": "vector",
+    "query": "How can I roll back a Deployment revision?",
+    "expected": [
+      "concepts/workloads/controllers/deployment"
+    ],
+    "retrieved": [
+      "concepts/workloads/controllers/deployment",
+      "concepts/workloads/controllers/deployment",
+      "concepts/workloads/controllers/statefulset",
+      "concepts/workloads/controllers/statefulset",
+      "concepts/workloads/controllers/replicaset"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 1.0,
+    "duration_ms": 0.6926250644028187
+  },
+  {
+    "case": 20,
+    "strategy": "vector",
+    "query": "What is the purpose of a ReplicaSet?",
+    "expected": [
+      "concepts/workloads/controllers/replicaset"
+    ],
+    "retrieved": [
+      "concepts/workloads/controllers/replicaset",
+      "concepts/workloads/controllers/replicaset",
+      "concepts/workloads/controllers/statefulset",
+      "concepts/workloads/controllers/statefulset",
+      "concepts/workloads/controllers/deployment"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 1.0,
+    "duration_ms": 0.515500083565712
+  },
+  {
+    "case": 21,
+    "strategy": "vector",
+    "query": "When should I use a StatefulSet for stable network identities?",
+    "expected": [
+      "concepts/workloads/controllers/statefulset"
+    ],
+    "retrieved": [
+      "concepts/workloads/controllers/statefulset",
+      "concepts/workloads/controllers/statefulset",
+      "concepts/storage/persistent-volumes",
+      "concepts/workloads/controllers/replicaset",
+      "concepts/workloads/controllers/daemonset"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 1.0,
+    "duration_ms": 1.3269999762997031
+  },
+  {
+    "case": 22,
+    "strategy": "vector",
+    "query": "How does a DaemonSet schedule a Pod on each node?",
+    "expected": [
+      "concepts/workloads/controllers/daemonset"
+    ],
+    "retrieved": [
+      "concepts/workloads/controllers/daemonset",
+      "concepts/workloads/controllers/daemonset",
+      "concepts/scheduling-eviction/assign-pod-node",
+      "concepts/scheduling-eviction/assign-pod-node",
+      "concepts/scheduling-eviction/node-pressure-eviction"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 1.0,
+    "duration_ms": 1.1006670538336039
+  },
+  {
+    "case": 23,
+    "strategy": "vector",
+    "query": "How does a Job track Pods until completion?",
+    "expected": [
+      "concepts/workloads/controllers/job"
+    ],
+    "retrieved": [
+      "concepts/workloads/controllers/job",
+      "concepts/workloads/controllers/job",
+      "concepts/workloads/pods/pod-lifecycle",
+      "concepts/workloads/pods/pod-lifecycle",
+      "concepts/scheduling-eviction/pod-priority-preemption"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 1.0,
+    "duration_ms": 1.0800838936120272
+  },
+  {
+    "case": 24,
+    "strategy": "vector",
+    "query": "How can I schedule Jobs using CronJob?",
+    "expected": [
+      "concepts/workloads/controllers/cron-jobs"
+    ],
+    "retrieved": [
+      "concepts/workloads/controllers/cron-jobs",
+      "concepts/workloads/controllers/cron-jobs",
+      "concepts/workloads/controllers/job",
+      "concepts/workloads/controllers/job",
+      "concepts/workloads/controllers/replicaset"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 1.0,
+    "duration_ms": 0.6587080424651504
+  },
+  {
+    "case": 25,
+    "strategy": "vector",
+    "query": "How does a ClusterIP Service expose Pods?",
+    "expected": [
+      "concepts/services-networking/service"
+    ],
+    "retrieved": [
+      "concepts/services-networking/cluster-ip-allocation",
+      "concepts/services-networking/cluster-ip-allocation",
+      "concepts/services-networking/service",
+      "concepts/services-networking/service",
+      "concepts/workloads/pods"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 0.3333333333333333,
+    "duration_ms": 0.8802079828456044
+  },
+  {
+    "case": 26,
+    "strategy": "vector",
+    "query": "What is the difference between NodePort and LoadBalancer Services?",
+    "expected": [
+      "concepts/services-networking/service"
+    ],
+    "retrieved": [
+      "concepts/services-networking/service",
+      "concepts/services-networking/service",
+      "concepts/services-networking/ingress",
+      "concepts/services-networking/cluster-ip-allocation",
+      "concepts/storage/volumes"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 1.0,
+    "duration_ms": 0.7035000016912818
+  },
+  {
+    "case": 27,
+    "strategy": "vector",
+    "query": "How does an Ingress route HTTP traffic?",
+    "expected": [
+      "concepts/services-networking/ingress"
+    ],
+    "retrieved": [
+      "concepts/services-networking/ingress",
+      "concepts/services-networking/ingress",
+      "concepts/services-networking/network-policies",
+      "concepts/services-networking/network-policies",
+      "concepts/services-networking/service"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 1.0,
+    "duration_ms": 0.5965839372947812
+  },
+  {
+    "case": 28,
+    "strategy": "vector",
+    "query": "How do NetworkPolicies control ingress and egress traffic?",
+    "expected": [
+      "concepts/services-networking/network-policies"
+    ],
+    "retrieved": [
+      "concepts/services-networking/network-policies",
+      "concepts/services-networking/network-policies",
+      "concepts/services-networking/ingress",
+      "tasks/debug/debug-application/debug-service",
+      "concepts/services-networking/service"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 1.0,
+    "duration_ms": 0.6528339581564069
+  },
+  {
+    "case": 29,
+    "strategy": "vector",
+    "query": "How are Service DNS names constructed?",
+    "expected": [
+      "concepts/services-networking/dns-pod-service"
+    ],
+    "retrieved": [
+      "concepts/overview/working-with-objects/namespaces",
+      "concepts/services-networking/dns-pod-service",
+      "tasks/debug/debug-application/debug-service",
+      "concepts/services-networking/dns-pod-service",
+      "concepts/workloads/controllers/statefulset"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 0.5,
+    "duration_ms": 0.6463330937549472
+  },
+  {
+    "case": 30,
+    "strategy": "vector",
+    "query": "What does an EndpointSlice contain?",
+    "expected": [
+      "concepts/services-networking/endpoint-slices"
+    ],
+    "retrieved": [
+      "concepts/services-networking/service",
+      "concepts/services-networking/endpoint-slices",
+      "concepts/services-networking/endpoint-slices",
+      "concepts/services-networking/service",
+      "concepts/workloads/pods/pod-lifecycle"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 0.5,
+    "duration_ms": 0.442708027549088
+  },
+  {
+    "case": 31,
+    "strategy": "vector",
+    "query": "How do ConfigMaps provide configuration to Pods?",
+    "expected": [
+      "concepts/configuration/configmap"
+    ],
+    "retrieved": [
+      "tasks/configure-pod-container/configure-pod-configmap",
+      "tasks/configure-pod-container/configure-pod-configmap",
+      "concepts/configuration/configmap",
+      "concepts/storage/volumes",
+      "concepts/configuration/configmap"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 0.3333333333333333,
+    "duration_ms": 0.8817920461297035
+  },
+  {
+    "case": 32,
+    "strategy": "vector",
+    "query": "How should I use a Kubernetes Secret?",
+    "expected": [
+      "concepts/configuration/secret"
+    ],
+    "retrieved": [
+      "concepts/configuration/secret",
+      "concepts/configuration/secret",
+      "concepts/containers/images",
+      "concepts/storage/volumes",
+      "concepts/security/service-accounts"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 1.0,
+    "duration_ms": 0.9970830287784338
+  },
+  {
+    "case": 33,
+    "strategy": "vector",
+    "query": "How can I mount a ConfigMap as a volume?",
+    "expected": [
+      "tasks/configure-pod-container/configure-pod-configmap"
+    ],
+    "retrieved": [
+      "concepts/configuration/configmap",
+      "concepts/storage/volumes",
+      "tasks/configure-pod-container/configure-pod-configmap",
+      "concepts/configuration/configmap",
+      "tasks/configure-pod-container/configure-pod-configmap"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 0.3333333333333333,
+    "duration_ms": 0.5675830179825425
+  },
+  {
+    "case": 34,
+    "strategy": "vector",
+    "query": "What is the lifecycle of an emptyDir volume?",
+    "expected": [
+      "concepts/storage/volumes"
+    ],
+    "retrieved": [
+      "concepts/storage/volumes",
+      "concepts/storage/volumes",
+      "concepts/configuration/manage-resources-containers",
+      "concepts/configuration/manage-resources-containers",
+      "concepts/storage/persistent-volumes"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 1.0,
+    "duration_ms": 0.5183749599382281
+  },
+  {
+    "case": 35,
+    "strategy": "vector",
+    "query": "How do PersistentVolumeClaims bind to PersistentVolumes?",
+    "expected": [
+      "concepts/storage/persistent-volumes"
+    ],
+    "retrieved": [
+      "concepts/storage/persistent-volumes",
+      "concepts/storage/persistent-volumes",
+      "concepts/storage/volumes",
+      "concepts/workloads/controllers/statefulset",
+      "concepts/workloads/controllers/statefulset"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 1.0,
+    "duration_ms": 0.5106250755488873
+  },
+  {
+    "case": 36,
+    "strategy": "vector",
+    "query": "How does a StorageClass enable dynamic provisioning?",
+    "expected": [
+      "concepts/storage/storage-classes"
+    ],
+    "retrieved": [
+      "concepts/storage/persistent-volumes",
+      "concepts/storage/storage-classes",
+      "concepts/storage/storage-classes",
+      "concepts/storage/persistent-volumes",
+      "concepts/workloads/controllers/statefulset"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 0.5,
+    "duration_ms": 0.5486669251695275
+  },
+  {
+    "case": 37,
+    "strategy": "vector",
+    "query": "How do labels and selectors identify Kubernetes objects?",
+    "expected": [
+      "concepts/overview/working-with-objects/labels"
+    ],
+    "retrieved": [
+      "concepts/overview/working-with-objects/labels",
+      "concepts/overview/working-with-objects/labels",
+      "concepts/scheduling-eviction/assign-pod-node",
+      "concepts/workloads/controllers/deployment",
+      "concepts/scheduling-eviction/assign-pod-node"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 1.0,
+    "duration_ms": 0.8205410558730364
+  },
+  {
+    "case": 38,
+    "strategy": "vector",
+    "query": "How do namespaces divide cluster resources?",
+    "expected": [
+      "concepts/overview/working-with-objects/namespaces"
+    ],
+    "retrieved": [
+      "concepts/overview/working-with-objects/namespaces",
+      "concepts/overview/working-with-objects/namespaces",
+      "tasks/configure-pod-container/assign-cpu-resource",
+      "tasks/configure-pod-container/assign-memory-resource",
+      "tasks/configure-pod-container/assign-memory-resource"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 1.0,
+    "duration_ms": 0.7287500193342566
+  },
+  {
+    "case": 39,
+    "strategy": "vector",
+    "query": "How do annotations differ from labels?",
+    "expected": [
+      "concepts/overview/working-with-objects/annotations"
+    ],
+    "retrieved": [
+      "concepts/overview/working-with-objects/annotations",
+      "concepts/overview/working-with-objects/annotations",
+      "concepts/overview/working-with-objects/labels",
+      "concepts/overview/working-with-objects/labels",
+      "concepts/services-networking/ingress"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 1.0,
+    "duration_ms": 0.60374999884516
+  },
+  {
+    "case": 40,
+    "strategy": "vector",
+    "query": "How can nodeSelector or node affinity constrain Pod placement?",
+    "expected": [
+      "concepts/scheduling-eviction/assign-pod-node"
+    ],
+    "retrieved": [
+      "concepts/scheduling-eviction/assign-pod-node",
+      "concepts/scheduling-eviction/assign-pod-node",
+      "concepts/scheduling-eviction/pod-priority-preemption",
+      "concepts/scheduling-eviction/pod-priority-preemption",
+      "concepts/workloads/controllers/daemonset"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 1.0,
+    "duration_ms": 0.9602499194443226
+  },
+  {
+    "case": 41,
+    "strategy": "vector",
+    "query": "How do taints and tolerations affect scheduling?",
+    "expected": [
+      "concepts/scheduling-eviction/taint-and-toleration"
+    ],
+    "retrieved": [
+      "concepts/scheduling-eviction/taint-and-toleration",
+      "concepts/scheduling-eviction/taint-and-toleration",
+      "concepts/workloads/controllers/daemonset",
+      "concepts/workloads/controllers/daemonset",
+      "concepts/containers/runtime-class"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 1.0,
+    "duration_ms": 0.5659169983118773
+  },
+  {
+    "case": 42,
+    "strategy": "vector",
+    "query": "When does node pressure cause Pod eviction?",
+    "expected": [
+      "concepts/scheduling-eviction/node-pressure-eviction"
+    ],
+    "retrieved": [
+      "concepts/scheduling-eviction/node-pressure-eviction",
+      "concepts/scheduling-eviction/node-pressure-eviction",
+      "concepts/scheduling-eviction/taint-and-toleration",
+      "concepts/workloads/pods/disruptions",
+      "concepts/workloads/pods/disruptions"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 1.0,
+    "duration_ms": 0.9988329838961363
+  },
+  {
+    "case": 43,
+    "strategy": "vector",
+    "query": "How does Pod priority and preemption work?",
+    "expected": [
+      "concepts/scheduling-eviction/pod-priority-preemption"
+    ],
+    "retrieved": [
+      "concepts/scheduling-eviction/pod-priority-preemption",
+      "concepts/scheduling-eviction/pod-priority-preemption",
+      "concepts/scheduling-eviction/node-pressure-eviction",
+      "concepts/scheduling-eviction/node-pressure-eviction",
+      "concepts/workloads/controllers/daemonset"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 1.0,
+    "duration_ms": 0.7391670951619744
+  },
+  {
+    "case": 44,
+    "strategy": "vector",
+    "query": "How can I configure runAsNonRoot in a security context?",
+    "expected": [
+      "tasks/configure-pod-container/security-context"
+    ],
+    "retrieved": [
+      "concepts/security/pod-security-standards",
+      "concepts/security/pod-security-standards",
+      "tasks/configure-pod-container/security-context",
+      "tasks/configure-pod-container/security-context",
+      "concepts/containers/runtime-class"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 0.3333333333333333,
+    "duration_ms": 0.632957904599607
+  },
+  {
+    "case": 45,
+    "strategy": "vector",
+    "query": "How do service accounts identify workloads?",
+    "expected": [
+      "concepts/security/service-accounts"
+    ],
+    "retrieved": [
+      "concepts/security/service-accounts",
+      "concepts/security/service-accounts",
+      "tasks/debug/debug-application/debug-pods",
+      "concepts/workloads/controllers/job",
+      "concepts/security/rbac-good-practices"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 1.0,
+    "duration_ms": 0.5981249269098043
+  },
+  {
+    "case": 46,
+    "strategy": "vector",
+    "query": "How do I apply least privilege with Kubernetes RBAC?",
+    "expected": [
+      "concepts/security/rbac-good-practices"
+    ],
+    "retrieved": [
+      "concepts/security/rbac-good-practices",
+      "concepts/security/service-accounts",
+      "concepts/security/rbac-good-practices",
+      "concepts/security/service-accounts",
+      "concepts/security/pod-security-standards"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 1.0,
+    "duration_ms": 0.7781250169500709
+  },
+  {
+    "case": 47,
+    "strategy": "vector",
+    "query": "How do I determine why a Pod failed from its termination message?",
+    "expected": [
+      "tasks/debug/debug-application/determine-reason-pod-failure"
+    ],
+    "retrieved": [
+      "tasks/debug/debug-application/determine-reason-pod-failure",
+      "tasks/debug/debug-application/determine-reason-pod-failure",
+      "concepts/workloads/controllers/job",
+      "tasks/debug/debug-application/debug-pods",
+      "concepts/workloads/controllers/job"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 1.0,
+    "duration_ms": 0.9124999633058906
+  },
+  {
+    "case": 48,
+    "strategy": "vector",
+    "query": "How do I use kubectl port-forward to access an application?",
+    "expected": [
+      "tasks/access-application-cluster/port-forward-access-application-cluster"
+    ],
+    "retrieved": [
+      "tasks/access-application-cluster/port-forward-access-application-cluster",
+      "tasks/access-application-cluster/port-forward-access-application-cluster",
+      "tasks/debug/debug-application/debug-service",
+      "concepts/workloads/pods/init-containers",
+      "tasks/debug/debug-application/debug-service"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 1.0,
+    "duration_ms": 0.9084580233320594
+  },
+  {
+    "case": 1,
+    "strategy": "hybrid",
+    "query": "How do I diagnose CrashLoopBackOff in a Pod?",
+    "expected": [
+      "tasks/debug/debug-application/debug-pods",
+      "concepts/workloads/pods/pod-lifecycle"
+    ],
+    "retrieved": [
+      "concepts/workloads/pods/pod-lifecycle",
+      "concepts/workloads/pods/pod-lifecycle",
+      "tasks/debug/debug-application/debug-init-containers",
+      "tasks/debug/debug-application/debug-running-pod",
+      "tasks/debug/debug-application/debug-init-containers"
+    ],
+    "recall_at_5": 0.5,
+    "reciprocal_rank": 1.0,
+    "duration_ms": 0.711207976564765
+  },
+  {
+    "case": 2,
+    "strategy": "hybrid",
+    "query": "How can I view logs from a previously terminated container?",
+    "expected": [
+      "tasks/debug/debug-application/debug-running-pod"
+    ],
+    "retrieved": [
+      "tasks/debug/debug-application/debug-running-pod",
+      "concepts/cluster-administration/logging",
+      "concepts/cluster-administration/logging",
+      "tasks/debug/debug-application/debug-init-containers",
+      "tasks/debug/debug-application/debug-init-containers"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 1.0,
+    "duration_ms": 0.6795829394832253
+  },
+  {
+    "case": 3,
+    "strategy": "hybrid",
+    "query": "My Service has no endpoints. How do I check selectors and Pod labels?",
+    "expected": [
+      "tasks/debug/debug-application/debug-service"
+    ],
+    "retrieved": [
+      "concepts/services-networking/service",
+      "tasks/debug/debug-application/debug-pods",
+      "concepts/services-networking/service",
+      "tasks/debug/debug-application/debug-service",
+      "concepts/overview/working-with-objects/labels"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 0.25,
+    "duration_ms": 0.9881659643724561
+  },
+  {
+    "case": 4,
+    "strategy": "hybrid",
+    "query": "What is the difference between readiness liveness and startup probes?",
+    "expected": [
+      "tasks/configure-pod-container/configure-liveness-readiness-startup-probes"
+    ],
+    "retrieved": [
+      "tasks/configure-pod-container/configure-liveness-readiness-startup-probes",
+      "concepts/workloads/pods/pod-lifecycle",
+      "tasks/configure-pod-container/configure-liveness-readiness-startup-probes",
+      "concepts/workloads/pods/pod-lifecycle",
+      "concepts/workloads/pods"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 1.0,
+    "duration_ms": 0.5946670426055789
+  },
+  {
+    "case": 5,
+    "strategy": "hybrid",
+    "query": "How do I configure an HTTP liveness probe?",
+    "expected": [
+      "tasks/configure-pod-container/configure-liveness-readiness-startup-probes"
+    ],
+    "retrieved": [
+      "tasks/configure-pod-container/configure-liveness-readiness-startup-probes",
+      "tasks/configure-pod-container/configure-liveness-readiness-startup-probes",
+      "concepts/workloads/pods/pod-lifecycle",
+      "concepts/workloads/pods/pod-lifecycle",
+      "concepts/workloads/pods/init-containers"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 1.0,
+    "duration_ms": 0.5632920656353235
+  },
+  {
+    "case": 6,
+    "strategy": "hybrid",
+    "query": "How do startup probes protect slow starting containers?",
+    "expected": [
+      "tasks/configure-pod-container/configure-liveness-readiness-startup-probes"
+    ],
+    "retrieved": [
+      "tasks/configure-pod-container/configure-liveness-readiness-startup-probes",
+      "concepts/workloads/pods/pod-lifecycle",
+      "tasks/configure-pod-container/configure-liveness-readiness-startup-probes",
+      "concepts/workloads/pods/pod-lifecycle",
+      "concepts/workloads/pods"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 1.0,
+    "duration_ms": 0.6418329430744052
+  },
+  {
+    "case": 7,
+    "strategy": "hybrid",
+    "query": "What happens when a container exceeds its memory limit?",
+    "expected": [
+      "concepts/configuration/manage-resources-containers"
+    ],
+    "retrieved": [
+      "tasks/configure-pod-container/assign-memory-resource",
+      "concepts/configuration/manage-resources-containers",
+      "concepts/configuration/manage-resources-containers",
+      "tasks/configure-pod-container/assign-memory-resource",
+      "concepts/workloads/pods"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 0.5,
+    "duration_ms": 0.9541249601170421
+  },
+  {
+    "case": 8,
+    "strategy": "hybrid",
+    "query": "How are CPU requests and limits configured for containers?",
+    "expected": [
+      "tasks/configure-pod-container/assign-cpu-resource"
+    ],
+    "retrieved": [
+      "concepts/configuration/manage-resources-containers",
+      "tasks/configure-pod-container/assign-cpu-resource",
+      "tasks/configure-pod-container/assign-cpu-resource",
+      "concepts/workloads/pods",
+      "concepts/configuration/manage-resources-containers"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 0.5,
+    "duration_ms": 0.6477080751210451
+  },
+  {
+    "case": 9,
+    "strategy": "hybrid",
+    "query": "How do I assign memory requests and limits to a container?",
+    "expected": [
+      "tasks/configure-pod-container/assign-memory-resource"
+    ],
+    "retrieved": [
+      "tasks/configure-pod-container/assign-memory-resource",
+      "tasks/configure-pod-container/assign-memory-resource",
+      "concepts/configuration/manage-resources-containers",
+      "concepts/configuration/manage-resources-containers",
+      "tasks/configure-pod-container/assign-cpu-resource"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 1.0,
+    "duration_ms": 0.7244999287649989
+  },
+  {
+    "case": 10,
+    "strategy": "hybrid",
+    "query": "What is a Kubernetes Pod?",
+    "expected": [
+      "concepts/workloads/pods"
+    ],
+    "retrieved": [
+      "concepts/workloads/pods/pod-qos",
+      "concepts/workloads/pods",
+      "concepts/workloads/controllers/daemonset",
+      "concepts/security/pod-security-standards",
+      "concepts/workloads/pods/pod-lifecycle"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 0.5,
+    "duration_ms": 0.9805419249460101
+  },
+  {
+    "case": 11,
+    "strategy": "hybrid",
+    "query": "What phases can a Pod be in during its lifecycle?",
+    "expected": [
+      "concepts/workloads/pods/pod-lifecycle"
+    ],
+    "retrieved": [
+      "concepts/workloads/pods/pod-lifecycle",
+      "concepts/workloads/pods/pod-lifecycle",
+      "concepts/workloads/pods/sidecar-containers",
+      "concepts/workloads/pods",
+      "concepts/workloads/pods/init-containers"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 1.0,
+    "duration_ms": 1.057333080098033
+  },
+  {
+    "case": 12,
+    "strategy": "hybrid",
+    "query": "What does ImagePullBackOff mean?",
+    "expected": [
+      "concepts/containers/images"
+    ],
+    "retrieved": [
+      "concepts/containers/images",
+      "tasks/debug/debug-application/determine-reason-pod-failure",
+      "concepts/containers/images",
+      "concepts/workloads/controllers/deployment",
+      "tasks/configure-pod-container/assign-cpu-resource"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 1.0,
+    "duration_ms": 0.5396250635385513
+  },
+  {
+    "case": 13,
+    "strategy": "hybrid",
+    "query": "How do imagePullPolicy and image tags interact?",
+    "expected": [
+      "concepts/containers/images"
+    ],
+    "retrieved": [
+      "concepts/containers/images",
+      "concepts/containers/images",
+      "concepts/storage/volumes",
+      "concepts/configuration/secret",
+      "concepts/scheduling-eviction/pod-priority-preemption"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 1.0,
+    "duration_ms": 0.7104170508682728
+  },
+  {
+    "case": 14,
+    "strategy": "hybrid",
+    "query": "How do init containers run before application containers?",
+    "expected": [
+      "concepts/workloads/pods/init-containers"
+    ],
+    "retrieved": [
+      "concepts/workloads/pods/init-containers",
+      "concepts/workloads/pods/init-containers",
+      "concepts/workloads/pods/sidecar-containers",
+      "concepts/workloads/pods/sidecar-containers",
+      "tasks/debug/debug-application/debug-init-containers"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 1.0,
+    "duration_ms": 1.2147920206189156
+  },
+  {
+    "case": 15,
+    "strategy": "hybrid",
+    "query": "How do sidecar containers differ from init containers?",
+    "expected": [
+      "concepts/workloads/pods/sidecar-containers"
+    ],
+    "retrieved": [
+      "concepts/workloads/pods/init-containers",
+      "concepts/workloads/pods/init-containers",
+      "concepts/workloads/pods/sidecar-containers",
+      "concepts/workloads/pods/sidecar-containers",
+      "concepts/workloads/pods"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 0.3333333333333333,
+    "duration_ms": 0.7161250105127692
+  },
+  {
+    "case": 16,
+    "strategy": "hybrid",
+    "query": "How can I debug an init container that fails?",
+    "expected": [
+      "tasks/debug/debug-application/debug-init-containers"
+    ],
+    "retrieved": [
+      "tasks/debug/debug-application/debug-init-containers",
+      "tasks/debug/debug-application/debug-init-containers",
+      "concepts/workloads/pods/init-containers",
+      "concepts/workloads/pods/init-containers",
+      "tasks/debug/debug-application/determine-reason-pod-failure"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 1.0,
+    "duration_ms": 0.6528750527650118
+  },
+  {
+    "case": 17,
+    "strategy": "hybrid",
+    "query": "What are Guaranteed Burstable and BestEffort QoS classes?",
+    "expected": [
+      "concepts/workloads/pods/pod-qos"
+    ],
+    "retrieved": [
+      "concepts/workloads/pods/pod-qos",
+      "concepts/workloads/pods/pod-qos",
+      "concepts/scheduling-eviction/node-pressure-eviction",
+      "concepts/scheduling-eviction/taint-and-toleration",
+      "concepts/workloads/pods/init-containers"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 1.0,
+    "duration_ms": 0.58787502348423
+  },
+  {
+    "case": 18,
+    "strategy": "hybrid",
+    "query": "How does a Deployment rolling update work?",
+    "expected": [
+      "concepts/workloads/controllers/deployment"
+    ],
+    "retrieved": [
+      "concepts/workloads/controllers/deployment",
+      "concepts/workloads/controllers/deployment",
+      "concepts/workloads/controllers/replicaset",
+      "concepts/workloads/controllers/statefulset",
+      "concepts/workloads/controllers/replicaset"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 1.0,
+    "duration_ms": 0.5519590340554714
+  },
+  {
+    "case": 19,
+    "strategy": "hybrid",
+    "query": "How can I roll back a Deployment revision?",
+    "expected": [
+      "concepts/workloads/controllers/deployment"
+    ],
+    "retrieved": [
+      "concepts/workloads/controllers/deployment",
+      "concepts/workloads/controllers/deployment",
+      "concepts/workloads/controllers/statefulset",
+      "concepts/workloads/controllers/statefulset",
+      "concepts/scheduling-eviction/assign-pod-node"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 1.0,
+    "duration_ms": 0.5443750414997339
+  },
+  {
+    "case": 20,
+    "strategy": "hybrid",
+    "query": "What is the purpose of a ReplicaSet?",
+    "expected": [
+      "concepts/workloads/controllers/replicaset"
+    ],
+    "retrieved": [
+      "concepts/workloads/controllers/replicaset",
+      "concepts/workloads/controllers/replicaset",
+      "concepts/workloads/controllers/deployment",
+      "concepts/workloads/controllers/deployment",
+      "concepts/services-networking/service"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 1.0,
+    "duration_ms": 0.4707910120487213
+  },
+  {
+    "case": 21,
+    "strategy": "hybrid",
+    "query": "When should I use a StatefulSet for stable network identities?",
+    "expected": [
+      "concepts/workloads/controllers/statefulset"
+    ],
+    "retrieved": [
+      "concepts/workloads/controllers/statefulset",
+      "concepts/workloads/controllers/statefulset",
+      "concepts/services-networking/network-policies",
+      "concepts/workloads/controllers/deployment",
+      "tasks/access-application-cluster/port-forward-access-application-cluster"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 1.0,
+    "duration_ms": 1.041000010445714
+  },
+  {
+    "case": 22,
+    "strategy": "hybrid",
+    "query": "How does a DaemonSet schedule a Pod on each node?",
+    "expected": [
+      "concepts/workloads/controllers/daemonset"
+    ],
+    "retrieved": [
+      "concepts/workloads/controllers/daemonset",
+      "concepts/workloads/controllers/daemonset",
+      "concepts/scheduling-eviction/node-pressure-eviction",
+      "concepts/scheduling-eviction/assign-pod-node",
+      "concepts/configuration/manage-resources-containers"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 1.0,
+    "duration_ms": 1.0322079760953784
+  },
+  {
+    "case": 23,
+    "strategy": "hybrid",
+    "query": "How does a Job track Pods until completion?",
+    "expected": [
+      "concepts/workloads/controllers/job"
+    ],
+    "retrieved": [
+      "concepts/workloads/controllers/job",
+      "concepts/workloads/controllers/job",
+      "concepts/workloads/pods/pod-lifecycle",
+      "concepts/workloads/pods/pod-lifecycle",
+      "concepts/scheduling-eviction/pod-priority-preemption"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 1.0,
+    "duration_ms": 1.1391249718144536
+  },
+  {
+    "case": 24,
+    "strategy": "hybrid",
+    "query": "How can I schedule Jobs using CronJob?",
+    "expected": [
+      "concepts/workloads/controllers/cron-jobs"
+    ],
+    "retrieved": [
+      "concepts/workloads/controllers/cron-jobs",
+      "concepts/workloads/controllers/cron-jobs",
+      "concepts/workloads/controllers/job",
+      "concepts/workloads/controllers/job",
+      "concepts/workloads/pods/disruptions"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 1.0,
+    "duration_ms": 0.7381250616163015
+  },
+  {
+    "case": 25,
+    "strategy": "hybrid",
+    "query": "How does a ClusterIP Service expose Pods?",
+    "expected": [
+      "concepts/services-networking/service"
+    ],
+    "retrieved": [
+      "concepts/services-networking/cluster-ip-allocation",
+      "concepts/services-networking/cluster-ip-allocation",
+      "concepts/services-networking/service",
+      "concepts/services-networking/service",
+      "concepts/workloads/controllers/daemonset"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 0.3333333333333333,
+    "duration_ms": 0.8674160344526172
+  },
+  {
+    "case": 26,
+    "strategy": "hybrid",
+    "query": "What is the difference between NodePort and LoadBalancer Services?",
+    "expected": [
+      "concepts/services-networking/service"
+    ],
+    "retrieved": [
+      "concepts/services-networking/service",
+      "concepts/services-networking/ingress",
+      "concepts/services-networking/service",
+      "concepts/services-networking/ingress",
+      "concepts/workloads/controllers/deployment"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 1.0,
+    "duration_ms": 0.7018329342827201
+  },
+  {
+    "case": 27,
+    "strategy": "hybrid",
+    "query": "How does an Ingress route HTTP traffic?",
+    "expected": [
+      "concepts/services-networking/ingress"
+    ],
+    "retrieved": [
+      "concepts/services-networking/ingress",
+      "concepts/services-networking/ingress",
+      "concepts/services-networking/network-policies",
+      "concepts/services-networking/network-policies",
+      "tasks/debug/debug-application/debug-service"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 1.0,
+    "duration_ms": 0.6106250220909715
+  },
+  {
+    "case": 28,
+    "strategy": "hybrid",
+    "query": "How do NetworkPolicies control ingress and egress traffic?",
+    "expected": [
+      "concepts/services-networking/network-policies"
+    ],
+    "retrieved": [
+      "concepts/services-networking/network-policies",
+      "concepts/services-networking/network-policies",
+      "concepts/services-networking/ingress",
+      "tasks/debug/debug-application/debug-service",
+      "concepts/services-networking/service"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 1.0,
+    "duration_ms": 0.6471659289672971
+  },
+  {
+    "case": 29,
+    "strategy": "hybrid",
+    "query": "How are Service DNS names constructed?",
+    "expected": [
+      "concepts/services-networking/dns-pod-service"
+    ],
+    "retrieved": [
+      "concepts/overview/working-with-objects/namespaces",
+      "concepts/workloads/controllers/statefulset",
+      "concepts/services-networking/dns-pod-service",
+      "concepts/services-networking/service",
+      "tasks/debug/debug-application/debug-service"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 0.3333333333333333,
+    "duration_ms": 0.7661249255761504
+  },
+  {
+    "case": 30,
+    "strategy": "hybrid",
+    "query": "What does an EndpointSlice contain?",
+    "expected": [
+      "concepts/services-networking/endpoint-slices"
+    ],
+    "retrieved": [
+      "concepts/services-networking/service",
+      "concepts/services-networking/service",
+      "concepts/services-networking/endpoint-slices",
+      "concepts/services-networking/endpoint-slices",
+      "tasks/debug/debug-application/debug-service"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 0.3333333333333333,
+    "duration_ms": 0.5172910168766975
+  },
+  {
+    "case": 31,
+    "strategy": "hybrid",
+    "query": "How do ConfigMaps provide configuration to Pods?",
+    "expected": [
+      "concepts/configuration/configmap"
+    ],
+    "retrieved": [
+      "tasks/configure-pod-container/configure-pod-configmap",
+      "concepts/configuration/configmap",
+      "tasks/configure-pod-container/configure-pod-configmap",
+      "concepts/configuration/configmap",
+      "concepts/storage/volumes"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 0.5,
+    "duration_ms": 0.8829169673845172
+  },
+  {
+    "case": 32,
+    "strategy": "hybrid",
+    "query": "How should I use a Kubernetes Secret?",
+    "expected": [
+      "concepts/configuration/secret"
+    ],
+    "retrieved": [
+      "concepts/configuration/secret",
+      "concepts/storage/volumes",
+      "concepts/configuration/secret",
+      "concepts/containers/images",
+      "concepts/security/service-accounts"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 1.0,
+    "duration_ms": 1.036957954056561
+  },
+  {
+    "case": 33,
+    "strategy": "hybrid",
+    "query": "How can I mount a ConfigMap as a volume?",
+    "expected": [
+      "tasks/configure-pod-container/configure-pod-configmap"
+    ],
+    "retrieved": [
+      "concepts/storage/volumes",
+      "tasks/configure-pod-container/configure-pod-configmap",
+      "tasks/configure-pod-container/configure-pod-configmap",
+      "concepts/configuration/configmap",
+      "concepts/storage/volumes"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 0.5,
+    "duration_ms": 0.6605420494452119
+  },
+  {
+    "case": 34,
+    "strategy": "hybrid",
+    "query": "What is the lifecycle of an emptyDir volume?",
+    "expected": [
+      "concepts/storage/volumes"
+    ],
+    "retrieved": [
+      "concepts/storage/volumes",
+      "concepts/configuration/manage-resources-containers",
+      "concepts/storage/volumes",
+      "concepts/configuration/manage-resources-containers",
+      "concepts/storage/persistent-volumes"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 1.0,
+    "duration_ms": 0.6295829080045223
+  },
+  {
+    "case": 35,
+    "strategy": "hybrid",
+    "query": "How do PersistentVolumeClaims bind to PersistentVolumes?",
+    "expected": [
+      "concepts/storage/persistent-volumes"
+    ],
+    "retrieved": [
+      "concepts/storage/persistent-volumes",
+      "concepts/storage/persistent-volumes",
+      "concepts/storage/volumes",
+      "concepts/workloads/controllers/statefulset",
+      "concepts/security/rbac-good-practices"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 1.0,
+    "duration_ms": 0.48983399756252766
+  },
+  {
+    "case": 36,
+    "strategy": "hybrid",
+    "query": "How does a StorageClass enable dynamic provisioning?",
+    "expected": [
+      "concepts/storage/storage-classes"
+    ],
+    "retrieved": [
+      "concepts/storage/persistent-volumes",
+      "concepts/storage/storage-classes",
+      "concepts/storage/storage-classes",
+      "concepts/workloads/controllers/statefulset",
+      "concepts/storage/persistent-volumes"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 0.5,
+    "duration_ms": 0.6556250154972076
+  },
+  {
+    "case": 37,
+    "strategy": "hybrid",
+    "query": "How do labels and selectors identify Kubernetes objects?",
+    "expected": [
+      "concepts/overview/working-with-objects/labels"
+    ],
+    "retrieved": [
+      "concepts/overview/working-with-objects/labels",
+      "concepts/overview/working-with-objects/labels",
+      "concepts/scheduling-eviction/assign-pod-node",
+      "concepts/scheduling-eviction/assign-pod-node",
+      "concepts/workloads/controllers/deployment"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 1.0,
+    "duration_ms": 0.9209580020979047
+  },
+  {
+    "case": 38,
+    "strategy": "hybrid",
+    "query": "How do namespaces divide cluster resources?",
+    "expected": [
+      "concepts/overview/working-with-objects/namespaces"
+    ],
+    "retrieved": [
+      "concepts/overview/working-with-objects/namespaces",
+      "concepts/overview/working-with-objects/namespaces",
+      "tasks/configure-pod-container/assign-cpu-resource",
+      "tasks/configure-pod-container/assign-memory-resource",
+      "concepts/scheduling-eviction/assign-pod-node"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 1.0,
+    "duration_ms": 0.656916992738843
+  },
+  {
+    "case": 39,
+    "strategy": "hybrid",
+    "query": "How do annotations differ from labels?",
+    "expected": [
+      "concepts/overview/working-with-objects/annotations"
+    ],
+    "retrieved": [
+      "concepts/overview/working-with-objects/annotations",
+      "concepts/overview/working-with-objects/annotations",
+      "concepts/overview/working-with-objects/labels",
+      "concepts/overview/working-with-objects/labels",
+      "concepts/scheduling-eviction/assign-pod-node"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 1.0,
+    "duration_ms": 0.42987498454749584
+  },
+  {
+    "case": 40,
+    "strategy": "hybrid",
+    "query": "How can nodeSelector or node affinity constrain Pod placement?",
+    "expected": [
+      "concepts/scheduling-eviction/assign-pod-node"
+    ],
+    "retrieved": [
+      "concepts/scheduling-eviction/assign-pod-node",
+      "concepts/scheduling-eviction/assign-pod-node",
+      "concepts/workloads/controllers/daemonset",
+      "concepts/scheduling-eviction/pod-priority-preemption",
+      "concepts/containers/runtime-class"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 1.0,
+    "duration_ms": 0.875667086802423
+  },
+  {
+    "case": 41,
+    "strategy": "hybrid",
+    "query": "How do taints and tolerations affect scheduling?",
+    "expected": [
+      "concepts/scheduling-eviction/taint-and-toleration"
+    ],
+    "retrieved": [
+      "concepts/scheduling-eviction/taint-and-toleration",
+      "concepts/scheduling-eviction/taint-and-toleration",
+      "concepts/containers/runtime-class",
+      "concepts/scheduling-eviction/assign-pod-node",
+      "concepts/workloads/controllers/daemonset"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 1.0,
+    "duration_ms": 0.5235840799286962
+  },
+  {
+    "case": 42,
+    "strategy": "hybrid",
+    "query": "When does node pressure cause Pod eviction?",
+    "expected": [
+      "concepts/scheduling-eviction/node-pressure-eviction"
+    ],
+    "retrieved": [
+      "concepts/scheduling-eviction/node-pressure-eviction",
+      "concepts/scheduling-eviction/node-pressure-eviction",
+      "concepts/scheduling-eviction/taint-and-toleration",
+      "concepts/workloads/pods/disruptions",
+      "concepts/scheduling-eviction/taint-and-toleration"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 1.0,
+    "duration_ms": 0.9921659948304296
+  },
+  {
+    "case": 43,
+    "strategy": "hybrid",
+    "query": "How does Pod priority and preemption work?",
+    "expected": [
+      "concepts/scheduling-eviction/pod-priority-preemption"
+    ],
+    "retrieved": [
+      "concepts/scheduling-eviction/pod-priority-preemption",
+      "concepts/scheduling-eviction/pod-priority-preemption",
+      "concepts/workloads/controllers/daemonset",
+      "concepts/scheduling-eviction/node-pressure-eviction",
+      "concepts/scheduling-eviction/taint-and-toleration"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 1.0,
+    "duration_ms": 0.7379590533673763
+  },
+  {
+    "case": 44,
+    "strategy": "hybrid",
+    "query": "How can I configure runAsNonRoot in a security context?",
+    "expected": [
+      "tasks/configure-pod-container/security-context"
+    ],
+    "retrieved": [
+      "concepts/security/pod-security-standards",
+      "tasks/configure-pod-container/security-context",
+      "tasks/configure-pod-container/security-context",
+      "concepts/workloads/pods",
+      "concepts/security/pod-security-standards"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 0.5,
+    "duration_ms": 0.567625043913722
+  },
+  {
+    "case": 45,
+    "strategy": "hybrid",
+    "query": "How do service accounts identify workloads?",
+    "expected": [
+      "concepts/security/service-accounts"
+    ],
+    "retrieved": [
+      "concepts/security/service-accounts",
+      "concepts/security/service-accounts",
+      "concepts/security/rbac-good-practices",
+      "concepts/security/rbac-good-practices",
+      "concepts/configuration/secret"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 1.0,
+    "duration_ms": 0.6807920290157199
+  },
+  {
+    "case": 46,
+    "strategy": "hybrid",
+    "query": "How do I apply least privilege with Kubernetes RBAC?",
+    "expected": [
+      "concepts/security/rbac-good-practices"
+    ],
+    "retrieved": [
+      "concepts/security/service-accounts",
+      "concepts/security/rbac-good-practices",
+      "concepts/security/rbac-good-practices",
+      "concepts/security/service-accounts",
+      "tasks/debug/debug-application/debug-running-pod"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 0.5,
+    "duration_ms": 0.9506670758128166
+  },
+  {
+    "case": 47,
+    "strategy": "hybrid",
+    "query": "How do I determine why a Pod failed from its termination message?",
+    "expected": [
+      "tasks/debug/debug-application/determine-reason-pod-failure"
+    ],
+    "retrieved": [
+      "tasks/debug/debug-application/determine-reason-pod-failure",
+      "tasks/debug/debug-application/determine-reason-pod-failure",
+      "concepts/workloads/controllers/job",
+      "concepts/workloads/pods/pod-lifecycle",
+      "tasks/debug/debug-application/debug-running-pod"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 1.0,
+    "duration_ms": 1.2171249836683273
+  },
+  {
+    "case": 48,
+    "strategy": "hybrid",
+    "query": "How do I use kubectl port-forward to access an application?",
+    "expected": [
+      "tasks/access-application-cluster/port-forward-access-application-cluster"
+    ],
+    "retrieved": [
+      "tasks/access-application-cluster/port-forward-access-application-cluster",
+      "tasks/access-application-cluster/port-forward-access-application-cluster",
+      "tasks/debug/debug-application/debug-service",
+      "tasks/debug/debug-application/debug-service",
+      "concepts/workloads/pods/init-containers"
+    ],
+    "recall_at_5": 1.0,
+    "reciprocal_rank": 1.0,
+    "duration_ms": 1.4205829938873649
+  }
+]

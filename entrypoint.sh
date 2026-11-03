@@ -1,13 +1,3 @@
 #!/bin/sh
-
-# Start the server in background
-ollama serve &
-
-# Wait for server to be ready (you can add retries here)
-sleep 5
-
-# Now pull the model
-ollama pull deepseek-llm
-
-# Keep the server running in foreground
-fg %1
+set -eu
+exec uvicorn main:app --host 0.0.0.0 --port "${PORT:-8000}" --no-proxy-headers

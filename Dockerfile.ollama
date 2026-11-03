@@ -1,4 +1,0 @@
-FROM ollama/ollama:0.9.1
-
-# Use CMD to start the server and pull model
-CMD ["/bin/sh", "-c", "ollama serve & sleep 5 && ollama pull deepseek-llm && wait"]
