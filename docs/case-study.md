@@ -16,9 +16,13 @@ Read `evaluation/report.json` for actual results, environment, methodology and t
 
 The immutable index simplifies a small free deployment at the expense of online updates. Browser search avoids backend availability for the evidence experience. Optional hosted inference avoids running a large model in a small container. Process-local budgets are insufficient for distributed abuse prevention, and provider account limits remain necessary.
 
+## Live integration finding
+
+The initial small model produced answers without required source IDs. The application rejected those answers and showed evidence instead. Schema-constrained citation selection and Llama 3.3 70B resolved that integration failure in the three featured smoke cases. The response validator still rejects unknown source IDs and unsupported kubectl verbs; this does not establish citation entailment or production diagnosis accuracy.
+
 ## Next evidence needed
 
-Independent review of source support and scenario success; held-out troubleshooting questions; live-provider integration verification; hosted concurrency/cold-start measurements; a comparison of deterministic workflows against bounded model-directed tool selection. Add complexity only when those measurements justify it.
+Independent review of source support and scenario success; held-out troubleshooting questions; hosted concurrency/cold-start measurements; a comparison of deterministic workflows against bounded model-directed tool selection. Add complexity only when those measurements justify it.
 
 ## Resume wording
 

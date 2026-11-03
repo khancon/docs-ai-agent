@@ -110,7 +110,10 @@ test("native AI binding can generate a validated answer without an API key", asy
         model.includes("bge")
           ? { data: [new Array(384).fill(0)] }
           : {
-              response: "Inspect the Pod events and logs [S1].",
+              response: {
+                answer: "Inspect the Pod events and logs.",
+                citations: ["S1"],
+              },
               usage: { total_tokens: 42 },
             },
     },
@@ -134,4 +137,39 @@ test("native AI binding can generate a validated answer without an API key", asy
   const result = await r.json();
   assert.equal(result.mode, "live_ai");
   assert.equal(result.usage.total_tokens, 42);
+});
+
+test("generated mutating commands are rejected", async (t) => {
+  if (
+    !(await fs
+      .stat(new URL("../.cache/sites-worker.js", import.meta.url))
+      .catch(() => false))
+  ) {
+    t.skip("Worker bundle not built");
+    return;
+  }
+  const w = (await import("../.cache/sites-worker.js")).default;
+  const env = {
+    AI: {
+      run: async () => ({
+        response: {
+          answer: "Run `kubectl delete pod demo`.",
+          citations: ["S1"],
+        },
+      }),
+    },
+  };
+  const r = await w.fetch(
+    new Request("https://safe.local/api/chat", {
+      method: "POST",
+      body: JSON.stringify({
+        query: "How do I inspect a Pod?",
+        strategy: "keyword",
+      }),
+    }),
+    env,
+  );
+  const data = await r.json();
+  assert.equal(data.mode, "evidence_search");
+  assert.ok(data.trace.some((t) => t.detail === "unsupported_command"));
 });

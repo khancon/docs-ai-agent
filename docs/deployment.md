@@ -6,7 +6,9 @@ GitHub Pages is enabled on `gh-pages` and the first static release was deployed 
 
 ## Cloudflare native Worker path
 
-A free Worker named `kubeguide-khancon` has been created in the owner's account. `wrangler.jsonc` uses a native `AI` binding, avoiding API keys. The candidate origin is `https://kubeguide-khancon.ahnaf-khan1.workers.dev`. Owner authorization is required before deploying through Wrangler. Do not present this candidate origin as the application until the app deployment and live AI response are verified.
+The full app is deployed at **https://kubeguide-khancon.ahnaf-khan1.workers.dev/** on the free Workers plan. All three featured scenarios returned live generated answers with valid citations on November 3, 2026. See `evaluation/live-smoke.json`.
+
+A free Worker named `kubeguide-khancon` runs in the owner's account. `wrangler.jsonc` uses a native `AI` binding, avoiding API keys. The verified origin is `https://kubeguide-khancon.ahnaf-khan1.workers.dev`. Owner-authorized Wrangler deployment and real-provider verification succeeded. Future deployments require a fresh owner-authorized CLI login.
 
 Build the normal (empty base path) static export, run `python scripts/build_sites.py`, then use `node frontend/node_modules/wrangler/bin/wrangler.js deploy`. The CLI dry run validates the 1.2 MiB gzipped bundle and AI binding. Stay on the free plan; do not enable paid overages. The documented scoped OAuth flow uses account/profile reads, Worker scripts, and Workers AI. Remove the temporary local CLI login after verification.
 

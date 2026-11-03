@@ -10,7 +10,9 @@ class Settings:
     data_dir: Path = ROOT / "data"
     account_id: str = os.getenv("CLOUDFLARE_ACCOUNT_ID", "")
     api_token: str = os.getenv("CLOUDFLARE_API_TOKEN", "")
-    model: str = os.getenv("GENERATION_MODEL", "@cf/meta/llama-3.1-8b-instruct-fp8")
+    model: str = os.getenv(
+        "GENERATION_MODEL", "@cf/meta/llama-3.3-70b-instruct-fp8-fast"
+    )
     embedding_model: str = "@cf/baai/bge-small-en-v1.5"
     local_embeddings: bool = os.getenv("LOCAL_EMBEDDINGS", "false").lower() == "true"
     ollama_url: str = os.getenv("OLLAMA_URL", "")

@@ -2,7 +2,7 @@
 
 **Kubernetes troubleshooting, with inspectable evidence.**
 
-[Public demo](https://khancon.github.io/docs-ai-agent/) · [Architecture](docs/architecture.md) · [Deployment](docs/deployment.md) · [Evaluation](evaluation/report.json)
+[Live AI demo](https://kubeguide-khancon.ahnaf-khan1.workers.dev/) · [Static fallback](https://khancon.github.io/docs-ai-agent/) · [Architecture](docs/architecture.md) · [Deployment](docs/deployment.md) · [Evaluation](evaluation/report.json)
 
 KubeGuide evolves the original FastAPI/Ollama documentation chatbot into a public troubleshooting workbench. Ask questions, inspect Deployment/Service YAML, open the exact supporting passages, and inspect retrieval activity.
 
@@ -12,12 +12,14 @@ KubeGuide evolves the original FastAPI/Ollama documentation chatbot into a publi
 - 52 official Kubernetes documents / 1,103 content-addressed passages at a fixed source revision.
 - Browser BM25 evidence search with no account, inference key, or backend dependency.
 - Safe, bounded YAML checks for selector mismatches, missing container images, readiness probes, and resource requests.
-- FastAPI service with optional BGE semantic retrieval, reciprocal-rank fusion, Cloudflare Workers AI/Ollama generation, citation-ID checks, SSE progress/answer delivery, health endpoints, budgets, deadlines, and concurrency caps.
+- FastAPI service with optional BGE semantic retrieval, reciprocal-rank fusion, Cloudflare Workers AI/Ollama generation, schema and citation-ID checks, SSE progress/answer delivery, health endpoints, budgets, deadlines, and concurrency caps.
 - Portable Sites Worker hosting the static export and optional same-origin inference API.
 - 48 versioned development benchmark cases with per-case results for keyword/vector/hybrid retrieval.
 - Tests, CI, Docker, Render Blueprint, and Vercel configuration.
 
-**GitHub Pages mode:** documentation evidence and static YAML checks. AI generation requires server-side inference credentials. Retrieved excerpts are explicitly labeled; they are not represented as generated diagnoses. Citation-ID validation checks references, not whether every claim follows from its citation.
+**Live Cloudflare mode:** BGE hybrid retrieval and Llama 3.3 generation through a native Workers AI binding, with schema-constrained responses and validated source IDs. The three featured scenarios were verified against the real provider; see `evaluation/live-smoke.json`.
+
+**GitHub Pages fallback:** documentation evidence and static YAML checks without inference. Retrieved excerpts are explicitly labeled; they are not represented as generated diagnoses. Citation-ID validation checks references, not whether every claim follows from its citation. Generated kubectl suggestions are restricted to an allowlist; no commands are executed.
 
 ## Local quick start
 

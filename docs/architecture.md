@@ -29,7 +29,7 @@ FastAPI retains the Python/backend engineering path and supports Render deployme
 
 ## Reliability and safety boundaries
 
-No arbitrary crawler endpoints, model management endpoints, shell execution, or Kubernetes credentials. Inputs, history, output and requests are bounded. Provider calls have deadlines. Python uses a concurrency semaphore. Provider failures and citation-ID failures fall back to documentation evidence. Logs contain request ID, mode, timing, and source count, not prompt bodies.
+No arbitrary crawler endpoints, model management endpoints, shell execution, or Kubernetes credentials. Inputs, history, output and requests are bounded. Provider calls have deadlines. Python uses a concurrency semaphore. Provider failures, invalid response schemas, citation-ID failures, and unsupported generated kubectl verbs fall back to documentation evidence. The live Worker uses schema-constrained Llama 3.3 responses via its native AI binding, without an application API key. Logs contain request ID, mode, timing, and source count, not prompt bodies.
 
 Public evidence mode executes locally in the browser. When generation is enabled, prompts, retrieved passages and deterministic findings go to the configured provider; pasted YAML itself is checked locally/server-side and only findings are included in the generation prompt. Do not paste private operational material into a public demo.
 

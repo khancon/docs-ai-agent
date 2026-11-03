@@ -206,3 +206,56 @@ def test_live_provider_success_with_mock(client):
     assert response.status_code == 200
     assert response.json()["mode"] == "live_ai"
     assert response.json()["usage"]["total_tokens"] == 42
+
+
+def test_provider_structured_response_validation():
+    async def run():
+        p = Provider(replace(settings, account_id="test", api_token="test"))
+
+        async def good(*args):
+            return {
+                "response": {
+                    "answer": "Inspect `kubectl get pods`.",
+                    "citations": ["S1"],
+                },
+                "usage": {"total_tokens": 10},
+            }
+
+        p.cloudflare = good
+        sources = [
+            {
+                "citation": "S1",
+                "title": "Pod",
+                "heading": "Overview",
+                "text": "Evidence",
+            }
+        ]
+        answer, usage = await p.generate("Pods?", sources, [])
+        assert "[S1]" in answer and usage["total_tokens"] == 10
+
+        async def unknown(*args):
+            return {
+                "response": {
+                    "answer": "Inspect Pods.",
+                    "citations": ["S1", "not-a-source"],
+                }
+            }
+
+        p.cloudflare = unknown
+        with pytest.raises(ProviderError):
+            await p.generate("Pods?", sources, [])
+
+        async def mutating(*args):
+            return {
+                "response": {
+                    "answer": "Run `kubectl delete pod demo`.",
+                    "citations": ["S1"],
+                }
+            }
+
+        p.cloudflare = mutating
+        with pytest.raises(ProviderError):
+            await p.generate("Pods?", sources, [])
+        await p.close()
+
+    asyncio.run(run())

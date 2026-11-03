@@ -732,7 +732,7 @@ export default function Home() {
               )}
               <div className="bottom-note">
                 <span className="status-dot" />
-                {status}
+                {generation ? "Live AI ready" : status}
                 <span>
                   Snapshot {manifest?.revision.slice(0, 8) || "…"} ·{" "}
                   {manifest?.indexed_at || "…"}
