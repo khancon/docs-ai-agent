@@ -1,0 +1,10 @@
+.git
+.cache
+frontend
+tests
+evaluation
+docs
+.env
+*.tar.gz
+__pycache__
+.pytest_cache

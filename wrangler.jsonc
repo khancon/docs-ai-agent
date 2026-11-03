@@ -1,0 +1,7 @@
+{
+  "name": "kubeguide-khancon",
+  "main": ".cache/sites-worker.js",
+  "compatibility_date": "2026-11-03",
+  "ai": { "binding": "AI" },
+  "vars": { "DAILY_GENERATIONS": "60" }
+}

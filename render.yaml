@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: kubeguide-api-khancon
+    runtime: docker
+    plan: free
+    healthCheckPath: /health/ready
+    autoDeployTrigger: checksPass
+    envVars:
+      - key: CLOUDFLARE_ACCOUNT_ID
+        sync: false
+      - key: CLOUDFLARE_API_TOKEN
+        sync: false
+      - key: ALLOWED_ORIGINS
+        value: https://kubeguide-khancon.vercel.app,https://kubeguide-khancon.ahnaf-khan1.chatgpt.site
+      - key: DAILY_GENERATIONS
+        value: '60'

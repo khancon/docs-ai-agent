@@ -1,0 +1,150 @@
+{
+  "verified_at": "2026-11-03T21:34:40.422911+00:00",
+  "url": "https://kubeguide-khancon.ahnaf-khan1.workers.dev",
+  "model": "@cf/meta/llama-3.3-70b-instruct-fp8-fast",
+  "limitations": "Three live smoke cases, not a statistically meaningful answer-quality benchmark. Citation IDs were checked; human entailment review is separate.",
+  "results": [
+    {
+      "scenario": "crashloop",
+      "success": true,
+      "mode": "live_ai",
+      "strategy": "hybrid",
+      "duration_ms": 4342,
+      "citations": [
+        "S1",
+        "S2",
+        "S3",
+        "S5"
+      ],
+      "findings": [],
+      "usage": {
+        "prompt_tokens": 1596,
+        "completion_tokens": 118,
+        "total_tokens": 1714,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "neurons": 66.72863006591797
+      },
+      "trace": [
+        {
+          "tool": "search_docs",
+          "detail": "BM25 keyword retrieval \u00b7 5 passages"
+        },
+        {
+          "tool": "embed_query",
+          "detail": "BGE query embedding; quantized immutable passage vectors"
+        },
+        {
+          "tool": "generate_answer",
+          "detail": "Citations checked against supplied IDs; factual support requires review"
+        },
+        {
+          "tool": "complete",
+          "detail": "4342 ms \u00b7 live_ai"
+        }
+      ],
+      "answer": "To inspect the logs, events, and restart reason of a Pod in CrashLoopBackOff, use `kubectl logs <name-of-pod>` to check the container logs, `kubectl describe pod <name-of-pod>` to see events and container statuses, and check the restart count and reason in the output of `kubectl describe pod <name-of-pod>`. Next, review the Pod configuration, check resource limits, and debug the application if necessary.\n\n**Sources:** [S1] [S2] [S3] [S5]"
+    },
+    {
+      "scenario": "service",
+      "success": true,
+      "mode": "live_ai",
+      "strategy": "hybrid",
+      "duration_ms": 4638,
+      "citations": [
+        "S1",
+        "S3",
+        "S4",
+        "S5"
+      ],
+      "findings": [],
+      "usage": {
+        "prompt_tokens": 1377,
+        "completion_tokens": 167,
+        "total_tokens": 1544,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "neurons": 70.92387390136719
+      },
+      "trace": [
+        {
+          "tool": "search_docs",
+          "detail": "BM25 keyword retrieval \u00b7 5 passages"
+        },
+        {
+          "tool": "embed_query",
+          "detail": "BGE query embedding; quantized immutable passage vectors"
+        },
+        {
+          "tool": "generate_answer",
+          "detail": "Citations checked against supplied IDs; factual support requires review"
+        },
+        {
+          "tool": "complete",
+          "detail": "4638 ms \u00b7 live_ai"
+        }
+      ],
+      "answer": "To compare Service selectors with Pod labels and readiness, first verify that the Service's selector matches the labels on the Pods. Use `kubectl get pods --selector=<selector>` to list Pods that match the Service's selector. Then, check the `containerPort` of the Pods matches the Service's `targetPort`. Also, use `kubectl get endpointslices -l kubernetes.io/service-name=<service-name>` to check if the EndpointSlice controller has found the correct Pods for the Service. Make sure the endpoints in the EndpointSlices match up with the number of pods that you expect to be members of your service. Check the labels and selectors of the Service and Pods for any typos or errors.\n\n**Sources:** [S1] [S3] [S4] [S5]"
+    },
+    {
+      "scenario": "manifest",
+      "success": true,
+      "mode": "live_ai",
+      "strategy": "hybrid",
+      "duration_ms": 5862,
+      "citations": [
+        "S1",
+        "S3",
+        "S5"
+      ],
+      "findings": [
+        {
+          "level": "warning",
+          "message": "checkout/api: no readiness probe; review traffic readiness behavior."
+        },
+        {
+          "level": "warning",
+          "message": "checkout/api: no resource requests; scheduling requirements are unspecified."
+        },
+        {
+          "level": "error",
+          "message": "checkout: Service selector matches no supplied Pod template in namespace default."
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 1712,
+        "completion_tokens": 111,
+        "total_tokens": 1823,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "neurons": 68.38844299316406
+      },
+      "trace": [
+        {
+          "tool": "validate_manifest",
+          "detail": "3 static findings"
+        },
+        {
+          "tool": "search_docs",
+          "detail": "BM25 keyword retrieval \u00b7 5 passages"
+        },
+        {
+          "tool": "embed_query",
+          "detail": "BGE query embedding; quantized immutable passage vectors"
+        },
+        {
+          "tool": "generate_answer",
+          "detail": "Citations checked against supplied IDs; factual support requires review"
+        },
+        {
+          "tool": "complete",
+          "detail": "5862 ms \u00b7 live_ai"
+        }
+      ],
+      "answer": "Traffic might not reach the Pods because the Service selector matches no supplied Pod template in the namespace default [S1]. The Deployment's `.spec.selector` must match `.spec.template.metadata.labels` [S3]. To troubleshoot, verify that the Pod's `containerPort` matches the Service's `targetPort` [S1] and check the Service definition using `kubectl get service <service-name> -o json` [S5].\n\n**Sources:** [S1] [S3] [S5]"
+    }
+  ]
+}
