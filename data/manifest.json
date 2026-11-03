@@ -1,0 +1,15 @@
+{
+  "revision": "177aebb48df75c35d179ae1fb0338afa15e4abd4",
+  "documents": 52,
+  "chunks": 1103,
+  "sha256": "7d9a1709220cebc7393aaede09d4a18302b1f566b74f8114391ec59091f5afa5",
+  "failed_paths": [
+    "concepts/configuration/liveness-readiness-startup-probes",
+    "concepts/cluster-administration/manage-deployment",
+    "tasks/run-application/horizontal-pod-autoscale"
+  ],
+  "indexed_at": "2026-11-02",
+  "embedding_model": "BAAI/bge-small-en-v1.5",
+  "embedding_dimensions": 384,
+  "embeddings_sha256": "b3c8d84fe095e676bb9eb5d70198f41f6a192cd2d912f4baa647f5568646ae31"
+}
