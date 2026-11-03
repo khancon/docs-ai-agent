@@ -211,7 +211,7 @@ export default function Home() {
             body: JSON.stringify({
               query: q,
               manifest: y,
-              history: history.slice(-4),
+              history: history.slice(-4).map((item) => item.slice(0, 500)),
               strategy: "hybrid",
             }),
             signal: abort.current.signal,

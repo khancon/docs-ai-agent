@@ -2,7 +2,7 @@
 
 **Kubernetes troubleshooting, with inspectable evidence.**
 
-[Deployment instructions](docs/deployment.md) · [Architecture](docs/architecture.md) · [Deployment](docs/deployment.md) · [Evaluation](evaluation/report.json)
+[Public demo](https://khancon.github.io/docs-ai-agent/) · [Architecture](docs/architecture.md) · [Deployment](docs/deployment.md) · [Evaluation](evaluation/report.json)
 
 KubeGuide evolves the original FastAPI/Ollama documentation chatbot into a public troubleshooting workbench. Ask questions, inspect Deployment/Service YAML, open the exact supporting passages, and inspect retrieval activity.
 
@@ -17,7 +17,7 @@ KubeGuide evolves the original FastAPI/Ollama documentation chatbot into a publi
 - 48 versioned development benchmark cases with per-case results for keyword/vector/hybrid retrieval.
 - Tests, CI, Docker, Render Blueprint, and Vercel configuration.
 
-**Demo mode:** documentation evidence and static YAML checks. AI generation requires server-side inference credentials. Retrieved excerpts are explicitly labeled; they are not represented as generated diagnoses. Citation-ID validation checks references, not whether every claim follows from its citation.
+**GitHub Pages mode:** documentation evidence and static YAML checks. AI generation requires server-side inference credentials. Retrieved excerpts are explicitly labeled; they are not represented as generated diagnoses. Citation-ID validation checks references, not whether every claim follows from its citation.
 
 ## Local quick start
 
@@ -82,6 +82,19 @@ python scripts/sync_frontend.py
 ```
 
 Sources are pinned in `scripts/build_corpus.py`. Changing the revision or embedding model requires rebuilding artifacts and rerunning evaluation. The three unavailable candidate paths are recorded in the manifest; 52 successful documents form the actual corpus. Do not change the embedding model for queries without rebuilding passage vectors.
+
+## Cloudflare Worker with native AI binding
+
+`wrangler.jsonc` binds Workers AI as `AI`; no API key is required in the Worker or browser. Build the static export and Worker bundle, then deploy with owner-authorized Wrangler:
+
+```sh
+python scripts/sync_frontend.py
+cd frontend && corepack pnpm build && cd ..
+python scripts/build_sites.py
+node frontend/node_modules/wrangler/bin/wrangler.js deploy
+```
+
+The same Worker serves the website and API. Use an empty `NEXT_PUBLIC_BASE_PATH` for this build. GitHub Pages uses `/docs-ai-agent` and remains a browser evidence fallback.
 
 ## API
 

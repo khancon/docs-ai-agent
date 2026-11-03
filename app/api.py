@@ -11,6 +11,13 @@ logger = logging.getLogger("kubeguide")
 router = APIRouter()
 
 
+def excerpt(text, limit=650):
+    value = text[:limit]
+    if value.count("```") % 2:
+        value += "\n```"
+    return value
+
+
 class Query(BaseModel):
     model_config = ConfigDict(extra="forbid")
     query: str = Field(min_length=3, max_length=2000)
@@ -157,7 +164,7 @@ async def answer(body, request):
     if not text:
         text = "### Documentation evidence\n\nThese passages were retrieved for your question. **This is evidence search, not an AI-generated diagnosis.**\n\n"
         text += "\n\n".join(
-            f"**{s['title']} — {s['heading']}** [{s['citation']}]\n\n{s['text'][:650]}"
+            f"**{s['title']} — {s['heading']}** [{s['citation']}]\n\n{excerpt(s['text'])}"
             for s in sources[:3]
         )
         text += "\n\n### Next step\nShare the relevant Pod events, container logs, or resource configuration to narrow the investigation. No cluster commands were executed."

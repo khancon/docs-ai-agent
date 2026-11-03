@@ -56,13 +56,17 @@ test("evidence mode explicitly reports no generation", () => {
   assert.equal(r.mode, "evidence_search");
   assert.ok(r.answer.includes("not an AI-generated diagnosis"));
 });
-test("worker serves real API and rejects invalid requests", async () => {
+test("worker serves real API and rejects invalid requests", async (t) => {
   if (
     !(await fs
       .stat(new URL("../.cache/sites-worker.js", import.meta.url))
       .catch(() => false))
-  )
+  ) {
+    t.skip(
+      "Worker bundle not built; run scripts/build_sites.py to include adapter checks",
+    );
     return;
+  }
   const w = (await import("../.cache/sites-worker.js")).default;
   let r = await w.fetch(new Request("https://test.local/health/ready"), {});
   assert.equal((await r.json()).generation_available, false);
@@ -83,4 +87,51 @@ test("worker serves real API and rejects invalid requests", async () => {
     {},
   );
   assert.equal(r.status, 400);
+});
+
+test("truncated evidence closes code fences", async () => {
+  const { excerpt } = await import("../.cache/test-core.mjs");
+  const text = excerpt("```yaml\n" + "abc ".repeat(300));
+  assert.equal((text.match(/```/g) || []).length % 2, 0);
+});
+test("native AI binding can generate a validated answer without an API key", async (t) => {
+  if (
+    !(await fs
+      .stat(new URL("../.cache/sites-worker.js", import.meta.url))
+      .catch(() => false))
+  ) {
+    t.skip("Worker bundle not built");
+    return;
+  }
+  const worker = (await import("../.cache/sites-worker.js")).default;
+  const env = {
+    AI: {
+      run: async (model) =>
+        model.includes("bge")
+          ? { data: [new Array(384).fill(0)] }
+          : {
+              response: "Inspect the Pod events and logs [S1].",
+              usage: { total_tokens: 42 },
+            },
+    },
+  };
+  let r = await worker.fetch(
+    new Request("https://binding.local/health/ready"),
+    env,
+  );
+  assert.equal((await r.json()).generation_available, true);
+  r = await worker.fetch(
+    new Request("https://binding.local/api/chat", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        query: "How do I debug a Pod?",
+        strategy: "keyword",
+      }),
+    }),
+    env,
+  );
+  const result = await r.json();
+  assert.equal(result.mode, "live_ai");
+  assert.equal(result.usage.total_tokens, 42);
 });

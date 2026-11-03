@@ -12,3 +12,4 @@ frontend/tsconfig.tsbuildinfo
 frontend/public/data/
 chroma_db/
 *.pyc
+.wrangler/

@@ -11,11 +11,15 @@ import manifest from "../data/manifest.json";
 import vectors from "../.cache/quantized-vectors.json";
 import assets from "../.cache/sites-assets";
 interface Env {
+  AI?: { run: (model: string, payload: unknown) => Promise<any> };
   CLOUDFLARE_ACCOUNT_ID?: string;
   CLOUDFLARE_API_TOKEN?: string;
   GENERATION_MODEL?: string;
   DAILY_GENERATIONS?: string;
 }
+const vectorNorms = (vectors as number[][]).map((v) =>
+  Math.sqrt(v.reduce((sum, value) => sum + value * value, 0)),
+);
 const index = new SearchIndex(corpus.chunks),
   clients = new Map<string, number[]>();
 let day = "",
@@ -31,7 +35,7 @@ const json = (body: unknown, status = 200) =>
     },
   });
 const configured = (env: Env) =>
-  !!(env.CLOUDFLARE_ACCOUNT_ID && env.CLOUDFLARE_API_TOKEN);
+  !!(env.AI || (env.CLOUDFLARE_ACCOUNT_ID && env.CLOUDFLARE_API_TOKEN));
 function limit(request: Request) {
   const now = Date.now(),
     key = request.headers.get("cf-connecting-ip") || "unknown";
@@ -44,6 +48,22 @@ function limit(request: Request) {
   return true;
 }
 async function inference(env: Env, model: string, payload: unknown) {
+  if (env.AI) {
+    let timer: ReturnType<typeof setTimeout> | undefined;
+    try {
+      return await Promise.race([
+        env.AI.run(model, payload),
+        new Promise<never>((_, reject) => {
+          timer = setTimeout(
+            () => reject(new Error("Inference deadline exceeded")),
+            25000,
+          );
+        }),
+      ]);
+    } finally {
+      if (timer) clearTimeout(timer);
+    }
+  }
   const response = await fetch(
     `https://api.cloudflare.com/client/v4/accounts/${env.CLOUDFLARE_ACCOUNT_ID}/ai/run/${model}`,
     {
@@ -107,7 +127,7 @@ async function respond(body: any, env: Env): Promise<Result> {
             i,
             score:
               v.reduce((s, x, j) => s + x * vector[j], 0) /
-              Math.sqrt(v.reduce((s, x) => s + x * x, 0)) /
+              vectorNorms[i] /
               norm,
           }))
           .sort((a, b) => b.score - a.score || a.i - b.i)

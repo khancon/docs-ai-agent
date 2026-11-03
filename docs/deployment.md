@@ -1,5 +1,15 @@
 # Deployment and operations
 
+## Verified public static demo
+
+GitHub Pages is enabled on `gh-pages` and the first static release was deployed successfully at https://khancon.github.io/docs-ai-agent/ on November 3, 2026. The production browser QA verified the workbench, corpus loading and YAML selector-mismatch example. This is the evidence-only fallback.
+
+## Cloudflare native Worker path
+
+A free Worker named `kubeguide-khancon` has been created in the owner's account. `wrangler.jsonc` uses a native `AI` binding, avoiding API keys. The candidate origin is `https://kubeguide-khancon.ahnaf-khan1.workers.dev`. Owner authorization is required before deploying through Wrangler. Do not present this candidate origin as the application until the app deployment and live AI response are verified.
+
+Build the normal (empty base path) static export, run `python scripts/build_sites.py`, then use `node frontend/node_modules/wrangler/bin/wrangler.js deploy`. The CLI dry run validates the 1.2 MiB gzipped bundle and AI binding. Stay on the free plan; do not enable paid overages. The documented scoped OAuth flow uses account/profile reads, Worker scripts, and Workers AI. Remove the temporary local CLI login after verification.
+
 ## Public Sites deployment
 
 The current demo is designed for `https://kubeguide-khancon.ahnaf-khan1.chatgpt.site` (verify the deployment record before relying on this URL). The source includes a portable Worker that serves the static Next export and optional same-origin API. The public browser evidence mode needs no external credential.

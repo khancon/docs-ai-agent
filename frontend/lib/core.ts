@@ -220,6 +220,12 @@ export function validateManifest(text: string): Finding[] {
         },
       ];
 }
+export function excerpt(text: string, limit = 650): string {
+  let value = text.slice(0, limit);
+  if ((value.match(/```/g) || []).length % 2) value += "\n```";
+  return value;
+}
+
 export function evidenceResult(
   index: SearchIndex,
   query: string,
@@ -244,7 +250,7 @@ export function evidenceResult(
         .slice(0, 3)
         .map(
           (s) =>
-            `**${s.title} — ${s.heading}** [${s.citation}]\n\n${s.text.slice(0, 650)}`,
+            `**${s.title} — ${s.heading}** [${s.citation}]\n\n${excerpt(s.text)}`,
         )
         .join("\n\n") +
       "\n\n### Next step\nShare the relevant Pod events, container logs, or resource configuration to narrow the investigation. No cluster commands were executed."
